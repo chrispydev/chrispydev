@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import Footer from '../components/Footer';
 
-import NavigationBar from '../components/NavigationBar';
+// import NavigationBar from '../components/NavigationBar';
 
 function blog() {
   return (
     <>
-      <NavigationBar />
       <BlogWrap>
         <p>
           I'm still working on this page, but if you'd like to have me work for

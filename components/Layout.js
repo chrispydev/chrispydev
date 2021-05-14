@@ -1,12 +1,13 @@
-import GlobalStyle from '../styles/global';
 import HtmlHead from './HtmlHead';
 import styled from 'styled-components';
+
+import NavigationBar from '../components/NavigationBar';
 
 function Layout({ children }) {
   return (
     <PageWrapper>
-      <GlobalStyle />
       <HtmlHead />
+      <NavigationBar />
       <main>{children}</main>
     </PageWrapper>
   );

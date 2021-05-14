@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
 
 import Typing from './TypingText';
-import { colors } from '../styles/global';
+import { colors } from '../lib/colors';
 
 function Banner() {
   return (

@@ -2,9 +2,9 @@ import { Container, Button } from 'react-bootstrap';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { colors } from '../styles/global';
 import { useEffect, useState } from 'react';
 import H from './Heading';
+import { colors } from '../lib/colors';
 
 // function Loading() {
 //   return <img src="/images/vercel.svg" width="20px" height="40px" />;

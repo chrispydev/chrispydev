@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { colors } from '../styles/global';
+import { colors } from '../lib/colors';
 
 import H from './Heading';
 

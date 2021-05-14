@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
-import NavigationBar from '../components/NavigationBar';
+// import NavigationBar from '../components/NavigationBar';
 import Banner from '../components/Banner';
 import About from '../components/About';
 import Portfolio from '../components/Portfolio';
@@ -12,7 +12,6 @@ import Footer from '../components/Footer';
 export default function Home({ portfolios }) {
   return (
     <>
-      <NavigationBar />
       <Banner />
       <About />
       <Portfolio />

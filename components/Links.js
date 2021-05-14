@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-
-import { colors } from '../styles/global';
+import { colors } from '../lib/colors';
 
 export default function A(props) {
   return (

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { colors } from '../styles/global';
 import A from '../components/Links';
+import { colors } from '../lib/colors';
 
 function Navigation() {
   return (
@@ -18,7 +18,7 @@ function Navigation() {
 }
 
 const Navbar = styled.header`
-  background-color: ${colors.blue};
+  background-color: ${colors.dark};
 `;
 
 const Nav = styled.nav`

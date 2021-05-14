@@ -1,7 +1,7 @@
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
+import { colors } from '../lib/colors';
 
-import { colors } from '../styles/global';
 import H from './Heading';
 
 function About() {

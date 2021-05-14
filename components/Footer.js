@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../styles/global';
-import H from './Heading';
+import { colors } from '../lib/colors';
 
 function Footer() {
   return (
