@@ -1,0 +1,23 @@
+[
+  {
+    "info": "Magnificent Personal Portfolio Website",
+    "detail": "Magnificent is my first website I created when I leant HTML, CSS, Javascript and JQuery. This took me about about two weeks to create. After this I sold it and made about $30 on codester.com. A market for selling and buying source code. The idea behind this, was to create a website for people to put their own portfolio out.",
+    "pic": "magnificent.png",
+    "visit": "https://chrispydev.github.io/magnificent_template/",
+    "source": "https://github.com/chrispydev/magnificent_template"
+  },
+  {
+    "info": "Alexandra Barber Portfolio Website",
+    "detail": "This is a Barbering shop website made for all barbers, the only thing which I didn't add was receiving payments Which I didn't add. But I add a fully functional working contact form.",
+    "pic": "alexandra.png",
+    "visit": "https://chrispydev.github.io/Alexandra/",
+    "source": "https://github.com/chrispydev/Alexandra"
+  },
+  {
+    "info": "Samuel Personl Portfolio Website",
+    "detail": "I created this website with the reason as the other one, though the other one is centered on babaring shop. This is one can be used for any kind of small business especially new developers",
+    "pic": "samuel.png",
+    "visit": "https://chrispydev.github.io/samuel/",
+    "source": "https://github.com/chrispydev/samuel"
+  }
+]
