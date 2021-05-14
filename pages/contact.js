@@ -1,5 +1,3 @@
-import NavigationBar from '../components/NavigationBar';
-
 import H from '../components/Heading';
 import styled from 'styled-components';
 import Footer from '../components/Footer';
@@ -7,7 +5,6 @@ import Footer from '../components/Footer';
 function contact() {
   return (
     <>
-      <NavigationBar />
       <ContactWrap>
         <H as="h4" transform="captial" mt="p1" italic>
           Contact

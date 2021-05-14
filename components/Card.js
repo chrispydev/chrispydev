@@ -13,7 +13,7 @@ function Card({ src, testimony, name }) {
         </div>
 
         <div>
-          <p>{testimony}</p>
+          <p className="testimony">{testimony}</p>
           <H as="h6" transform="upper">
             {name}
           </H>
@@ -38,6 +38,10 @@ const TestimonialsContent = styled.div`
     height: 120px;
     padding-top: -10rem;
     border-radius: 50%;
+  }
+
+  & p.testimony {
+    font-weight: 400;
   }
 `;
 

@@ -41,7 +41,7 @@ function Portfolio() {
           </div>
           <div className="portfolio__text">
             <h3>{info}</h3>
-            <p>{detail}</p>
+            <p className="port__detail">{detail}</p>
             <div>
               <PortfolioButton
                 variant="outline-info"
@@ -105,6 +105,11 @@ const PortfolioContent = styled.div`
       margin-top: 8%;
       font-size: 0.9rem;
       transform: translateY(-2rem);
+    }
+
+    & p.port__detail {
+      font-weight: 500;
+      line-height: 1.8;
     }
   }
 `;

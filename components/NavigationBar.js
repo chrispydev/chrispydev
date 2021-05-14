@@ -18,7 +18,7 @@ function Navigation() {
 }
 
 const Navbar = styled.header`
-  background-color: ${colors.dark};
+  background-color: ${colors.blue};
 `;
 
 const Nav = styled.nav`

@@ -22,7 +22,7 @@ const FooterWrap = styled.footer`
   margin-bottom: -3rem;
   text-align: center;
   font-size: 1.2rem;
-  background: #333;
+  background: ${colors.blue};
   color: ${colors.white};
 
   & > * {
