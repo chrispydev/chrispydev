@@ -7,6 +7,11 @@
     "source": "https://github.com/chrispydev/magnificent_template"
   },
   {
+    "info": "Amazon Price Tracker",
+    "detail": "This is an selenium project built with python. And I made this project because, I wanted track a product on amazon. So that when the price increases or decreases I will know decide if I will buy or not. Contact Me to the source Code for free",
+    "pic": "amazon.png"
+  },
+  {
     "info": "Alexandra Barber Portfolio Website",
     "detail": "This is a Barbering shop website made for all barbers, the only thing which I didn't add was receiving payments Which I didn't add. But I add a fully functional working contact form.",
     "pic": "alexandra.png",
@@ -14,10 +19,24 @@
     "source": "https://github.com/chrispydev/Alexandra"
   },
   {
+    "info": "A Full Stack Django Blog App",
+    "detail": "My First Full Stack app after learning django from CoreyMsSchefer. This was challenging but after two weeks of hard work I built it",
+    "pic": "django_blog.png",
+    "visit": "",
+    "source": "https://github.com/chrispydev/django_blog_app_clone"
+  },
+  {
     "info": "Samuel Personl Portfolio Website",
     "detail": "I created this website with the reason as the other one, though the other one is centered on babaring shop. This is one can be used for any kind of small business especially new developers",
     "pic": "samuel.png",
     "visit": "https://chrispydev.github.io/samuel/",
     "source": "https://github.com/chrispydev/samuel"
+  },
+  {
+    "info": "Instagram Giveaway Scrapper",
+    "detail": "A free giveaway instagram Scrapper built scrapping the content of someones instagram profile page. Not much but just the number of followers, following and little details",
+    "pic": "instagramscrapper.png",
+    "source": "https://github.com/InstagramGiveawayScraper",
+    "visit":""
   }
 ]
