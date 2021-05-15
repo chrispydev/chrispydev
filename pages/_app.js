@@ -4,13 +4,6 @@ import { createGlobalStyle } from 'styled-components';
 import Layout from '../components/Layout';
 
 const GlobalStyle = createGlobalStyle`
-  :root {
-    --dark: '#212529';
-    --blue: '#193549';
-    --white: '#f1f1f1';
-    --cyran: '#1aebff';
-  }
-
   body {
     font-family: 'Open Sans Condensed', sans-serif;
     font-family: 'Poppins', sans-serif;
@@ -32,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ul {
-    /* list-style: none; */
     display: block;
     margin-block-start: 1em;
     margin-block-end: 1em;
