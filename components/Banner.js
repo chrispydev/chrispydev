@@ -15,7 +15,7 @@ function Banner() {
         <p className="intro">
           I'm an open minded person who love to love solve problems,
           <br /> teach people programming, loves to learn. And most importantly,
-          <br /> I love preaching the gospel of Jesus Christ✝️.
+          <br /> I love preaching the gospel of the Jesus Christ✝️.
           <br />
           <small className="greeting small">#chrispydev</small>
         </p>

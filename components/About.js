@@ -20,13 +20,13 @@ function About() {
             My Name is Christian Owusu Yaw and am a full stack python, react
             developer. I have three years of professional coding experience.
             Currently, I work in easternrailfarms, beltsville and a student of
-            University of Cape Coast. Am studding B.ed Computer Science. I have
+            University of Cape Coast. Am a B.ed Computer Science student. I have
             knowledge in html, css, javascript and python. And when it comes to
-            frameworks and libraries. I know jQuery, bootstrap, materialize css,
-            material-ui, Semantic UI, django, django-rest-frame, beautiful-soup,
-            selenium, react.js, react-native and next.js. I use these
-            technologies to create websites, mobile apps and web automation and
-            web scraping.
+            frameworks and libraries. I use jQuery, bootstrap, materialize css,
+            material-ui, Semantic UI, django, django-rest-framework,
+            beautiful-soup, selenium, react.js, react-native and next.js. I use
+            these technologies to create websites, mobile apps, web automation
+            and web scraping.
           </AboutIntro>
           <Row className="mt-4">
             <Col>
