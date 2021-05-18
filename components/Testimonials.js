@@ -7,7 +7,7 @@ function Testimonials() {
   return (
     <TestimonyWrap>
       <H as="h4" transform="upper" italic>
-        Testimonials from Happy Customers
+        Testimonials from Happy Clients
       </H>
       <TestimonialGrid>
         <Card
@@ -28,7 +28,7 @@ function Testimonials() {
         <Card
           src="/images/testimonial4.jpg"
           testimony="I am the head of the marking team at easternrailfarms and when we need a
-          website for our business. So that we can market ourselves, we
+          website for our business. We
           contacted Christian Owusu and he didn't just create the website but
           made it look awesome."
           name="Joshua Jewonu"
