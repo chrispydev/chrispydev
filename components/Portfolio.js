@@ -6,10 +6,6 @@ import { useEffect, useState } from 'react';
 import H from './Heading';
 import { colors } from '../lib/colors';
 
-// function Loading() {
-//   return <img src="/images/vercel.svg" width="20px" height="40px" />;
-// }
-
 function Portfolio() {
   const [portfolios, setPortfolios] = useState();
 
@@ -79,6 +75,11 @@ const PortfolioContent = styled.div`
   margin-top: 2.8rem;
   padding: 0.4rem;
   border: 0.2rem solid ${colors.cyran};
+
+  /* & img {
+    width: 450px;
+    object-fit: contain;
+  } */
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
