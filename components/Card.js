@@ -65,7 +65,6 @@ const TestimonialsContent = styled.div`
 
   & p.testimony {
     font-weight: 400;
-    max-height: 200px;
   }
 `;
 
