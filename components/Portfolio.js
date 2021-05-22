@@ -33,6 +33,7 @@ function Portfolio() {
               width="480px"
               height="250px"
               alt={info}
+              quality={100}
               objectFit="fill"
             />
           </div>
