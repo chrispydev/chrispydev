@@ -28,6 +28,7 @@ function Portfolio() {
         <PortfolioContent key={index}>
           <div>
             <Image
+              priority
               src={`/images/${pic}`}
               width="480px"
               height="250px"
