@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { Button } from 'react-bootstrap';
 import styled from 'styled-components';
 
 import { colors } from '../lib/colors';
@@ -39,39 +38,38 @@ const PortfolioContent = styled.div`
   padding: 0.5rem;
   position: relative;
 
- &::before{
-    content: "";
-    position: absolute;
-    top: -3rem;
-    width: 100%;
-    height: 0.2rem;
-    background: ${colors.cyran};
- }
-
- &::after{
-    content: "";
-    position: absolute;
-    bottom: -3rem;
-    width: 100%;
-    height: 0.2rem;
-    background: ${colors.cyran};
- }
-
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
     grid-template-row: repeat(2, 1fr);
   }
 
-    & p {
-      margin-top: 8%;
-      font-size: 0.9rem;
-      transform: translateY(-2rem);
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    top: -3rem;
+    width: 100%;
+    height: 0.2rem;
+    background: ${colors.cyran};
+  }
 
-    & p.port__detail {
-      font-weight: 500;
-      line-height: 1.8;
-    }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -3rem;
+    width: 100%;
+    height: 0.2rem;
+    background: ${colors.cyran};
+  }
+
+  & p {
+    margin-top: 8%;
+    font-size: 0.9rem;
+    transform: translateY(-2rem);
+  }
+
+  & p.port__detail {
+    font-weight: 500;
+    line-height: 1.8;
   }
 `;
 
