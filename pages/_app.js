@@ -12,8 +12,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   * {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;

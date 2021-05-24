@@ -10,7 +10,8 @@ function Portfolio() {
   const [portfolios, setPortfolios] = useState();
 
   useEffect(async () => {
-    const res = await fetch('/data/portfolio.json');
+    const res = await fetch('/api/');
+    // const res = await fetch('/data/portfolio.json');
     const portfolios = await res.json();
     setPortfolios(portfolios);
   }, []);
@@ -73,7 +74,7 @@ const PortfolioWrap = styled(Container)`
 const PortfolioContent = styled.div`
   display: grid;
   grid-gap: 1.7rem;
-  grid-template-columns: repeat(1, 1fr 1fr);
+  grid-template-columns: repeat(1, 1fr 2fr);
   margin-top: 2.8rem;
   padding: 0.4rem;
   border: 0.2rem solid ${colors.cyran};
