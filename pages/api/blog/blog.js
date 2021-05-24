@@ -1,4 +1,4 @@
-import blog from '../../public/data/blog.json';
+import blog from '../../../public/data/blog.json';
 
 export default function hander(req, res) {
   try {
