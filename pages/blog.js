@@ -27,7 +27,7 @@ const BlogWrap = styled.section`
 export default blog;
 
 export async function getStaticProps() {
-  const res = await fetch(`${server}/api/blog/blog`);
+  const res = await fetch(`${server}/api/blog`);
   const blog = await res.json();
 
   return {
