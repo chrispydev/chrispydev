@@ -17,7 +17,7 @@ const headingSizes = {
   h2: 4,
   h3: 3,
   h4: 2.5,
-  h5: 2,
+  h5: 1.7,
   h6: 1.4,
   span: 3.2,
 };
@@ -48,6 +48,8 @@ const HStyles = styled.h1`
   text-transform: ${({ transform }) =>
     transform && `${textTransform[transform]}`};
   text-align: ${({ center }) => (center ? 'center' : '')};
+  text-decoration: ${({ underline }) => (underline ? 'underline' : '')};
+  text-decoration-color: ${colors.cyran};
   font-style: ${({ italic }) => (italic ? 'italic' : '')};
 
   @media (max-width: 425px) {
@@ -85,7 +87,7 @@ const HStyles = styled.h1`
     height: 0.75em;
     content: '';
     pointer-events: none;
-    /* background: ${colors.cyran}; */
+    background: ${colors.cyran};
     position: absolute;
     z-index: 0;
     --translate: -0.5rem;
@@ -95,7 +97,7 @@ const HStyles = styled.h1`
     ${({ as }) => as === 'span' && `visibility: hidden;`};
   }
   &:hover:before {
-    background: ${colors.cyran};
+    /* background: ${colors.cyran}; */
     visibility: visible;
   }
 `;
