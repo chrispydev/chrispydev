@@ -21,7 +21,6 @@ function blog() {
     const blog = await res.json();
     setBlog(blog);
   }, []);
-  console.log(blog);
   return (
     <>
       <BlogWrap>
