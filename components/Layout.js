@@ -15,7 +15,7 @@ function Layout({ children }) {
 
 const PageWrapper = styled.div`
   max-width: 1440px;
-  min-width: 375px;
+  min-width: 320px;
   margin: auto;
 `;
 

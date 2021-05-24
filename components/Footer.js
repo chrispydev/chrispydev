@@ -89,6 +89,16 @@ const FooterWrap = styled.footer`
   background: ${colors.blue};
   color: ${colors.white};
 
+  @media (max-width: 320px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 300px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    line-break: auto;
+  }
+
   & > * {
     padding-bottom: 0.5rem;
   }

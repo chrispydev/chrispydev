@@ -47,8 +47,8 @@ const Nav = styled.nav`
       font-size: 1.3rem;
       text-decoration: none;
       color: ${colors.white};
-      padding-top: 1rem;
-      padding: 1rem 1.8rem 1rem 0;
+      margin: auto;
+      padding: 0.1rem 1.5rem 0.1rem 1.5rem;
       z-index: 1;
       transition: all 0.4s ease-in-out;
       position: relative;
