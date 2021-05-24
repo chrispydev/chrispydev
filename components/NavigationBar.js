@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import A from '../components/Links';
 import { colors } from '../lib/colors';
@@ -7,10 +8,19 @@ function Navigation() {
     <Navbar>
       <Nav>
         <ul>
-          <A href="/">Home</A>
-          <A href="/blog">Blog</A>
-          <A href="/service">Service</A>
-          <A href="/contact">Contact</A>
+          {/* <A>Home</A> */}
+          <Link href="/">
+            <a className="grit">Home</a>
+          </Link>
+          <Link href="/blog">
+            <a>Blog</a>
+          </Link>
+          <Link href="/service">
+            <a>Service</a>
+          </Link>
+          <Link href="/contact">
+            <a>Contact</a>
+          </Link>
         </ul>
       </Nav>
     </Navbar>
@@ -32,6 +42,44 @@ const Nav = styled.nav`
     justify-content: center;
     flex-wrap: wrap;
     font-weight: 900;
+
+    & a {
+      font-size: 1.3rem;
+      text-decoration: none;
+      color: ${colors.white};
+      padding-top: 1rem;
+      padding: 1rem 1.8rem 1rem 0;
+      z-index: 1;
+      transition: all 0.4s ease-in-out;
+      position: relative;
+
+      &:hover {
+        color: ${colors.dark};
+        font-weight: 900;
+        font-size: 1.7rem;
+      }
+
+      @media (max-width: 425px) {
+        font-size: 1.3rem;
+      }
+
+      &:before {
+        /* cyran square is using ems so it scales up/down with the font size */
+        width: 0.75em;
+        height: 0.75em;
+        content: '';
+        pointer-events: none;
+        position: absolute;
+        z-index: -1;
+        --translate: -0.06rem;
+        --rotate: 0deg;
+        transform: translateX(var(--translate)) translateY(var(--translate))
+          rotate(var(--rotate));
+      }
+      &:hover:before {
+        background: ${colors.cyran};
+      }
+    }
   }
 `;
 

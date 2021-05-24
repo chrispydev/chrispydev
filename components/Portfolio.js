@@ -2,20 +2,10 @@ import { Container, Button } from 'react-bootstrap';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { useEffect, useState } from 'react';
 import H from './Heading';
 import { colors } from '../lib/colors';
 
-function Portfolio() {
-  const [portfolios, setPortfolios] = useState();
-
-  useEffect(async () => {
-    const res = await fetch('/api/');
-    // const res = await fetch('/data/portfolio.json');
-    const portfolios = await res.json();
-    setPortfolios(portfolios);
-  }, []);
-
+function Portfolio({ portfolios }) {
   return (
     <PortfolioWrap>
       <H as="h4" transform="upper" italic>
@@ -30,7 +20,7 @@ function Portfolio() {
           <div>
             <Image
               priority
-              src={`/images/${pic}`}
+              src={`https://chrispydev.vercel.app/images/${pic}`}
               width="480px"
               height="250px"
               alt={info}

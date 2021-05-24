@@ -74,6 +74,7 @@ const TestimonialsContent = styled.div`
   }
 `;
 
+// const CustomNextImage = styled.img`
 const CustomNextImage = styled(Image)`
   border-radius: 50%;
 `;

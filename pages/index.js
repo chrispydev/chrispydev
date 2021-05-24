@@ -7,26 +7,26 @@ import Portfolio from '../components/Portfolio';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
 
-// import { server } from '../config';
+import { server } from '../config';
 
 export default function Home({ portfolios }) {
   return (
     <>
       <Banner />
       <About />
-      <Portfolio />
+      <Portfolio portfolios={portfolios} />
+      {/* <Portfolio /> */}
       <Testimonials />
       <Footer />
-      {/* <Portfolio portfolios={portfolios} /> */}
     </>
   );
 }
 
-// export async function getStaticProps() {
-//   const res = await fetch(`${server}/api`);
-//   const portfolios = await res.json();
+export async function getStaticProps() {
+  const res = await fetch(`${server}/api`);
+  const portfolios = await res.json();
 
-//   return {
-//     props: { portfolios },
-//   };
-// }
+  return {
+    props: { portfolios },
+  };
+}
