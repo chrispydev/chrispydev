@@ -13,7 +13,7 @@ function BlogCard({ pic, title, detail }) {
             priority
             src={`/images/${pic}`}
             width="480px"
-            height="250px"
+            height="260px"
             alt="amazon"
             quality={100}
             objectFit="fill"
@@ -23,7 +23,7 @@ function BlogCard({ pic, title, detail }) {
           <H as="h5" underline>
             {title}
           </H>
-          <p className="port__detail"> {detail}</p>
+          <p className="port__detail pt-4"> {detail}</p>
         </div>
       </PortfolioContent>
     </>

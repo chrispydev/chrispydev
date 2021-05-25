@@ -2,16 +2,16 @@
   {
     "pic": "mac_os_ubuntu.png",
     "title": "How to customize Ubuntu 20.04.2 LTS Focal Fossa like mac os",
-    "detail": "Ubuntu is a grate operating system which is can be customizable to any os you want. So here how I customize my ubuntu system"
+    "detail": "Ubuntu is a great operating system which is can be customizable to any os you want. So here how I customize my ubuntu system and you can also customize yours."
   },
   {
     "pic": "sublime_text.png",
-    "title": "How to setup Sublime text for full stack development",
+    "title": "Sublime text for full stack web development",
     "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, expedita quia laboriosam voluptatem fuga adipisci impedit quo aliquam repellendus eos?"
   },
   {
     "pic": "new_website.png",
     "title": "My New Website Built with nextjs",
-    "detail": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, expedita quia laboriosam voluptatem fuga adipisci impedit quo aliquam repellendus eos?"
+    "detail": "I created a new website with nextjs and my website super fast as compared to the old website. And I like to take you along with the tech involved."
   }
 ]

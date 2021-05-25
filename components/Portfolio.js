@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import H from './Heading';
 import { colors } from '../lib/colors';
+import { server } from '../config';
 
 function Portfolio({ portfolios }) {
   return (
@@ -20,7 +21,7 @@ function Portfolio({ portfolios }) {
           <div>
             <Image
               priority
-              src={`https://chrispydev.vercel.app/images/${pic}`}
+              src={`${server}/images/${pic}`}
               width="480px"
               height="250px"
               alt={info}
