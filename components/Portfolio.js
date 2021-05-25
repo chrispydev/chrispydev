@@ -36,6 +36,7 @@ function Portfolio({ portfolios }) {
               {visit && (
                 <PortfolioButton
                   variant="outline-info"
+                  target="_blank"
                   href={visit}
                   className="mx-1"
                   size="sm"
@@ -44,7 +45,12 @@ function Portfolio({ portfolios }) {
                 </PortfolioButton>
               )}
               {source && (
-                <PortfolioButton variant="info" href={source} size="sm">
+                <PortfolioButton
+                  variant="info"
+                  target="_blank"
+                  href={source}
+                  size="sm"
+                >
                   Source Code
                 </PortfolioButton>
               )}
