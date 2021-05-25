@@ -6,35 +6,34 @@ function contact() {
   return (
     <>
       <ContactWrap>
-        <H as="h4" transform="captial" mt="p1" italic>
+        <H as="h4" transform="captial" mt="p1" pb="p2" italic>
           Contact
         </H>
 
         <p>
-          <span>I'm still working on this page,</span> but if you'd like to have
-          me work for you, please get in touch with me at{' '}
+          Hey! I get lots of email, so please scan this page before firing one
+          off. Don't be afraid to email me, it just might take a few hours (or
+          days) for me to get back to you 😃.
+        </p>
+        <p>If you want me to work for you, I am currently available.</p>
+        <p>
+          The portfolio section contains some of my previous work and a little
+          detail about me.
+        </p>
+        <p>
+          You did it! Thank you for scanning email me{' '}
           <a href="mailto:chrispydev.owusu@gmail.com">
             chrispydev.owusu@gmail.com
           </a>
         </p>
-        <p>
-          <span>I usually like to speak about JavaScript,</span> CSS, Hot Tips,
-          React.js, Next.js, Python, Django, Django-Rest-Framework and related
-          topics.
-        </p>
-        <p>
-          <span>Soon this page will have all the services I provide</span>
-        </p>
+        <p>Here are a few tips on writing me:</p>
         <ul>
-          <p>Here are a few tips on writing me:</p>
           <li>Use paragraphs, avoid large walls of text.</li>
           <li>Number your asks if there are multiple</li>
           <li>Keep it as short as you can</li>
           <li>
-            Post code on a git repo, <a href="https://codepen.io">Codepen</a> or
-            smaller stuff or errors in a{' '}
-            <a href="https://gist.github.com/">Gist</a>. Screenshots are helpful
-            too!
+            Post code on a git repo, Codepen or smaller stuff or errors in a
+            Gist. Screenshots are helpful too!
           </li>
         </ul>
         <p>Thanks, have a great day!</p>
@@ -45,36 +44,23 @@ function contact() {
 }
 
 const ContactWrap = styled.section`
-  width: 70%;
+  width: 80%;
   margin: auto;
-
-  & > p {
-    margin-top: 2rem;
-  }
+  line-height: 1.9em;
 
   & p {
-    font-size: 1.1rem;
-    font-weight: 300;
-    line-height: 1.8;
-
-    & a {
-      text-transform: lowercase;
-      font-style: italic;
-    }
+    font-weight: 400;
+    font-size: 1.15rem;
   }
 
-  & p span {
-    font-weight: 600;
+  & a {
+    text-transform: lowercase;
+    font-style: italic;
   }
 
   & ul {
     list-style-type: square;
-    font-weight: 300;
-  }
-
-  & ul,
-  ol {
-    line-height: 1.77778;
+    font-size: 1.04rem;
     font-weight: 400;
   }
 `;

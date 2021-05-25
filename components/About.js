@@ -12,7 +12,7 @@ function About() {
           <AboutImage src="/images/about.png" loading="lazy" />
         </Col>
         <Col sm={12} md={6} lg={6}>
-          <H as="h5" pt="p1">
+          <H as="h5" pt="p1" pb="p1">
             I am an Amazing developer
           </H>
 

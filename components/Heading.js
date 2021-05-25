@@ -61,7 +61,7 @@ const HStyles = styled.h1`
     z-index: 2;
     content: '';
     background: url('/images/blackgrit.png');
-    background-size: 700px;
+    background-size: contain;
     background-repeat: repeat;
     background-position: center;
     top: 0;

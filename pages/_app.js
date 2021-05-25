@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { createGlobalStyle } from 'styled-components';
 
 import Layout from '../components/Layout';
+import { colors } from '../lib/colors';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -44,7 +45,11 @@ const GlobalStyle = createGlobalStyle`
   background: rgb(25 53 73);
   border-radius: 3rem;
 }
-  `;
+
+::selection {
+  background-color: ${colors.cyran};
+}
+`;
 
 function MyApp({ Component, pageProps }) {
   return (
