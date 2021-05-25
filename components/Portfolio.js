@@ -33,17 +33,21 @@ function Portfolio({ portfolios }) {
             <h3>{info}</h3>
             <p className="port__detail">{detail}</p>
             <div>
-              <PortfolioButton
-                variant="outline-info"
-                href={visit}
-                className="mx-1"
-                size="sm"
-              >
-                Visit
-              </PortfolioButton>
-              <PortfolioButton variant="info" href={source} size="sm">
-                Source Code
-              </PortfolioButton>
+              {visit && (
+                <PortfolioButton
+                  variant="outline-info"
+                  href={visit}
+                  className="mx-1"
+                  size="sm"
+                >
+                  Visit
+                </PortfolioButton>
+              )}
+              {source && (
+                <PortfolioButton variant="info" href={source} size="sm">
+                  Source Code
+                </PortfolioButton>
+              )}
             </div>
           </div>
         </PortfolioContent>

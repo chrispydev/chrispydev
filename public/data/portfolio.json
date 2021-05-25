@@ -8,8 +8,9 @@
   },
   {
     "info": "Amazon Price Tracker",
-    "detail": "This is an selenium project built with python. And I made this project because, I wanted track a product on amazon. So that when the price increases or decreases I will know decide if I will buy or not. Contact Me to the source Code for free",
-    "pic": "amazon.png"
+    "detail": "This is an selenium project built with python. And I made this project because, I wanted track a product on amazon. So that when the price increases or decreases I will know decide if I will buy or not. And I learnt it from youtube.",
+    "pic": "amazon.png",
+    "source": "https://github.com/chrispydev/amazonpricescrapper"
   },
   {
     "info": "Alexandra Barber Portfolio Website",
