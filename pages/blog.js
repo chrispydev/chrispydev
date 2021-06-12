@@ -39,6 +39,10 @@ const BlogWrap = styled.section`
   width: 80%;
   margin: auto;
   font-size: 1.1rem;
+
+  @media (max-width: 425px) {
+    max-width: 100%;
+  }
 `;
 
 export default blog;

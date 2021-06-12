@@ -9,6 +9,16 @@ function BlogCard({ pic, title, detail }) {
     <>
       <PortfolioContent>
         <div>
+          {/* <img
+            // priority="true"
+            loading="lazy"
+            src={`/images/${pic}`}
+            width="480px"
+            height="260px"
+            alt="amazon"
+            // quality={100}
+            // objectFit="fill"
+          /> */}
           <Image
             priority
             src={`/images/${pic}`}
@@ -70,6 +80,19 @@ const PortfolioContent = styled.div`
   & p.port__detail {
     font-weight: 500;
     line-height: 1.8;
+  }
+
+  & img {
+    width: 450px;
+    object-fit: fill;
+
+    @media (max-width: 425px) {
+      width: 280px;
+      object-fit: contain;
+    }
+    @media (max-width: 320px) {
+      margin: -1rem;
+    }
   }
 `;
 

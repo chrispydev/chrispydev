@@ -19,6 +19,16 @@ function Portfolio({ portfolios }) {
       {portfolios?.map(({ info, detail, pic, visit, source }, index) => (
         <PortfolioContent key={index}>
           <div>
+            {/* <img
+              // priority="true"
+              loading="lazy"
+              src={`${server}/images/${pic}`}
+              width="480px"
+              height="250px"
+              alt={info}
+              // quality={100}
+              // objectFit="fill"
+            /> */}
             <Image
               priority
               src={`${server}/images/${pic}`}
@@ -70,6 +80,10 @@ const PortfolioWrap = styled(Container)`
   & > h3 {
     font-weight: 700;
   }
+
+  @media (max-width: 425px) {
+    max-width: 100%;
+  }
 `;
 
 const PortfolioContent = styled.div`
@@ -80,10 +94,15 @@ const PortfolioContent = styled.div`
   padding: 0.4rem;
   border: 0.2rem solid ${colors.cyran};
 
-  /* & img {
+  & img {
     width: 450px;
-    object-fit: contain;
-  } */
+    object-fit: fill;
+
+    @media (max-width: 425px) {
+      width: 280px;
+      object-fit: contain;
+    }
+  }
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);

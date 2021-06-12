@@ -9,6 +9,13 @@ function Card({ src, testimony, name }) {
     <TestimonialsContent>
       <div>
         <div className="rounded__image">
+          {/* <CustomNextImage
+            // priority="true"
+            loading="lazy"
+            src={src}
+            width="100px"
+            height="100px"
+          /> */}
           <CustomNextImage
             priority
             src={src}
@@ -75,6 +82,8 @@ const TestimonialsContent = styled.div`
 `;
 
 // const CustomNextImage = styled.img`
+//   border-radius: 50%;
+// `;
 const CustomNextImage = styled(Image)`
   border-radius: 50%;
 `;
