@@ -42,7 +42,7 @@
   },
   {
     "info": "React Redux Gallery App",
-    "detail": "A react redux amazon gallery built from a youtube video by jakobowsky",
+    "detail": "A react redux amazon gallery app built from a youtube tutorial made by jakobowsky. He used html, css and javascript but I chose to use React and redux for it.",
     "pic": "reactamazon.png",
     "source": "https://github.com/chrispydev/react-redux-gallery-app",
     "visit":""
