@@ -39,5 +39,12 @@
     "pic": "instagramscrapper.png",
     "source": "https://github.com/chrispydev/InstagramGiveawayScraper",
     "visit":""
+  },
+  {
+    "info": "React Redux Gallery App",
+    "detail": "A react redux amazon gallery built from a youtube video by jakobowsky",
+    "pic": "reactamazon.png",
+    "source": "https://github.com/chrispydev/react-redux-gallery-app",
+    "visit":""
   }
 ]
