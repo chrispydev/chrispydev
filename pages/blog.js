@@ -23,13 +23,13 @@ function blog({ blog }) {
   // }, []);
   return (
     <>
-      <BlogWrap>
-        {blog?.map(({ pic, title, detail }, index) => (
+      {blog?.map(({ pic, title, detail, link }, index) => (
+        <BlogWrap key={index}>
           <>
-            <BlogCard pic={pic} title={title} detail={detail} />
+            <BlogCard pic={pic} title={title} detail={detail} link={link} />
           </>
-        ))}
-      </BlogWrap>
+        </BlogWrap>
+      ))}
       <Footer />
     </>
   );

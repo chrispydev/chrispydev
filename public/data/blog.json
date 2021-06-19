@@ -2,12 +2,14 @@
   {
     "pic": "mac_os_ubuntu.png",
     "title": "How to customize Ubuntu 20.04.2 LTS Focal Fossa like mac os",
-    "detail": "Ubuntu is a great operating system which is can be customizable to any os you want. So here how I customize my ubuntu system and you can also customize yours."
+    "detail": "Ubuntu is a great operating system which is can be customizable to any os you want. So here how I customize my ubuntu system and you can also customize yours.",
+    "link": "/blog/ubuntu"
   },
   {
     "pic": "sublime_text.png",
     "title": "Sublime text for full stack web development",
     "detail": "Sublime text is a simple text editor but not easy to setup for  what you want and here is how to setup sublime for reactjs⚛️, python🐍, html, css, javascript and typescript. This include formatting as well."
+
   },
   {
     "pic": "new_website.png",
