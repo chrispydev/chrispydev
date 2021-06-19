@@ -8,7 +8,6 @@ function Navigation() {
     <Navbar>
       <Nav>
         <ul>
-          {/* <A>Home</A> */}
           <Link href="/">
             <a className="grit">Home</a>
           </Link>

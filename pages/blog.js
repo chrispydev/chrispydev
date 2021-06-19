@@ -26,7 +26,7 @@ function blog({ blog }) {
       <BlogWrap>
         {blog?.map(({ pic, title, detail }, index) => (
           <>
-            <BlogCard pic={pic} title={title} detail={detail} index={index} />
+            <BlogCard pic={pic} title={title} detail={detail} />
           </>
         ))}
       </BlogWrap>
