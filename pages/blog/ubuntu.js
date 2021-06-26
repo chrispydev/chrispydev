@@ -1,11 +1,53 @@
 import { server } from '../../config';
+import Image from 'next/image';
+import styled from 'styled-components';
 
-export default function ubuntu() {
-  return <div>This is the ubuntu page</div>;
+import H from '../../components/Heading';
+
+export default function ubuntu({ ubuntuBlog }) {
+  return (
+    <>
+      <Wrapper>
+        {ubuntuBlog.map(({ pic, title }, index) => (
+          <UbuntuWrapper key={index}>
+            <div>
+              <Image
+                width="600"
+                height="340"
+                src={`/images/${pic}`}
+                alt={title}
+                quality={100}
+                objectFit="fill"
+              />
+            </div>
+            <H as="h5" underline>
+              {title}
+            </H>
+          </UbuntuWrapper>
+        ))}
+      </Wrapper>
+    </>
+  );
 }
 
+const Wrapper = styled.section`
+  width: 80%;
+  margin: auto;
+`;
+
+const UbuntuWrapper = styled.div`
+  margin: 2rem auto;
+  width: 80%;
+  text-align: center;
+
+  & h5 {
+    text-align: left;
+    margin-top: 3rem;
+  }
+`;
+
 export async function getStaticProps() {
-  const res = await fetch(`${server}/api/blog`, {
+  const res = await fetch(`${server}/api/blog/ubuntu`, {
     method: 'GET',
     headers: {
       // update with your user-agent
@@ -14,9 +56,9 @@ export async function getStaticProps() {
       Accept: 'application/json; charset=UTF-8',
     },
   });
-  const blog = await res.json();
+  const ubuntuBlog = await res.json();
 
   return {
-    props: { blog },
+    props: { ubuntuBlog },
   };
 }

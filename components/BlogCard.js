@@ -23,11 +23,11 @@ function BlogCard({ pic, title, detail, link }) {
           <Image
             priority
             src={`/images/${pic}`}
-            width="480px"
-            height="260px"
+            width="500px"
+            height="200px"
             alt="amazon"
             quality={100}
-            objectFit="fill"
+            objectFit="contain"
           />
         </div>
         <div className="portfolio__text">
