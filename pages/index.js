@@ -35,11 +35,11 @@ export default function Home() {
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch(`${server}/api`);
-  const portfolios = await res.json();
+// export async function getStaticProps() {
+//   const res = await fetch(`${server}/api`);
+//   const portfolios = await res.json();
 
-  return {
-    props: { portfolios },
-  };
-}
+//   return {
+//     props: { portfolios },
+//   };
+// }
