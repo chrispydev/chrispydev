@@ -8,7 +8,7 @@ import { server } from '../config';
 import { useEffect, useState } from 'react';
 
 export default function Home({ portfolios }) {
-  const [portfolio, setPortfolio] = useState();
+  const [portfolios, setPortfolio] = useState();
 
   useEffect(async () => {
     const res = await fetch(`${server}/api/blog`, {
