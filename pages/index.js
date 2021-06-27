@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import { server } from '../config';
 import { useEffect, useState } from 'react';
 
-export default function Home({ portfolios }) {
+export default function Home() {
   const [portfolios, setPortfolio] = useState();
 
   useEffect(async () => {
