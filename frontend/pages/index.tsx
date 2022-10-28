@@ -1,11 +1,12 @@
 import type { NextPage, GetServerSideProps } from 'next';
 import { sanityClient, urlFor } from '../sanity';
 
-const Home: NextPage = ({ testimonials }) => {
-  console.log(testimonials);
+import Header from '../components/header';
+
+const Home: NextPage = () => {
   return (
-    <div>
-      <p className='text-blue-300'>Hello world test</p>
+    <div className='app'>
+      <Header />
     </div>
   );
 };
