@@ -1,23 +1,67 @@
 import { NextPage } from 'next';
-// import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const Header: NextPage = () => {
+  const scaleVariants = {
+    whileInView: {
+      scale: [0, 1],
+      opacity: [0, 1],
+      transition: {
+        duration: 1,
+        ease: 'easeInOut',
+      },
+    },
+  };
+
+  const headerImages: string[] = ['/flutter.png', '/redux.png', '/sass.png'];
+
   return (
-    <nav className='app__navbar'>
-      <div className='app__navbar-logo'>
-        <img src='/logo.png' />
-      </div>
-      <ul className='app__navbar-links'>
-        {['home', 'Above', 'contact', 'work', 'skills', 'contact'].map(
-          (item) => (
-            <li key={`link-${item}`}>
-              <div />
-              <a href={`#${item}`}>{item}</a>
-            </li>
-          )
-        )}
-      </ul>
-    </nav>
+    <div id='home' className='app__header app__flex'>
+      <motion.div
+        whileInView={{ x: [-100, 0], opacity: [0, 1] }}
+        transition={{ duration: 0.5 }}
+        className='app__header-info'
+      >
+        <div className='app__header-badge'>
+          <div className='badge-cmp app__flex'>
+            <span>👋</span>
+            <div style={{ marginLeft: 20 }}>
+              <p className='p-text'>Hello, I am</p>
+              <h1 className='head-text'>Micheal</h1>
+            </div>
+          </div>
+          <div className='tag-cmp app__flex'>
+            <p className='p-text'>Wev Developer</p>
+
+            <p className='p-text'>Freelancer</p>
+          </div>
+        </div>
+      </motion.div>
+      <motion.div
+        whileInView={{ x: [0, 1] }}
+        transition={{ duration: 0.5, delayChildren: 0.5 }}
+        className='app__header-img'
+      >
+        <img src='/profile.png' alt='header image' />
+        <motion.img
+          whileInView={{ x: [0, 1] }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          src='/circle.svg'
+          className='overlay_circle'
+        ></motion.img>
+      </motion.div>
+      <motion.div
+        variants={scaleVariants}
+        whileInView={scaleVariants.whileInView}
+        className='app__header-circles'
+      >
+        {headerImages.map((cirle, index) => (
+          <div className='circle-cmp app__flex' key={index}>
+            <img src={cirle} alt='circle' />
+          </div>
+        ))}
+      </motion.div>
+    </div>
   );
 };
 export default Header;
