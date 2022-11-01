@@ -1,30 +1,13 @@
-import { NextPage } from 'next';
+import { NextComponentType } from 'next';
 import { motion } from 'framer-motion';
+import { AboutProps } from '../types/types';
+import { urlFor } from '../sanity';
 
-const abouts = [
-  {
-    title: 'Web Developer',
-    description: 'I am a good developer',
-    imageUrl: '/about01.png',
-  },
-  {
-    title: 'Web Design',
-    description: 'I am a good developer',
-    imageUrl: '/about02.png',
-  },
-  {
-    title: 'UI/UX',
-    description: 'I am a good developer',
-    imageUrl: '/about03.png',
-  },
-  {
-    title: 'Web Animations',
-    description: 'I am a good developer',
-    imageUrl: '/about04.png',
-  },
-];
+interface AboutPageProps {
+  abouts: AboutProps[];
+}
 
-const About: NextPage = () => {
+const About = ({ abouts }: AboutPageProps) => {
   return (
     <>
       <h2 className='head-text'>
@@ -42,12 +25,12 @@ const About: NextPage = () => {
             transition={{ duration: 0.5, type: 'tween' }}
             className='app__profile-item'
           >
-            <img src={about.imageUrl} alt={about.title} />
+            <img src={urlFor(about?.imgUrl).url()} alt={about.title} />
             <h2 className='bold-text' style={{ marginTop: 20 }}>
-              {about.title}
+              {about?.title}
             </h2>
             <p className='p-text' style={{ marginTop: 10 }}>
-              {about.description}
+              {about?.description}
             </p>
           </motion.div>
         ))}

@@ -1,16 +1,22 @@
 import type { NextPage, GetServerSideProps } from 'next';
-import { sanityClient, urlFor } from '../sanity';
+import { sanityClient } from '../sanity';
 
 import Header from '../components/header';
 import Navbar from '../components/navbar';
 import About from '../components/about';
+import { AboutProps } from '../types/types';
 
-const Home: NextPage = () => {
+interface HomeProps {
+  abouts: AboutProps[];
+}
+
+const Home: NextPage<HomeProps> = ({ abouts }) => {
+  console.log(abouts);
   return (
     <div className='app'>
       <Navbar />
       <Header />
-      <About />
+      <About abouts={abouts} />
     </div>
   );
 };
@@ -18,10 +24,10 @@ const Home: NextPage = () => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const query = '*[_type == "testimonials"]';
-  const testimonials = await sanityClient.fetch(query);
+  const query = '*[_type == "abouts"]';
+  const abouts = await sanityClient.fetch(query);
 
   return {
-    props: { testimonials },
+    props: { abouts },
   };
 };

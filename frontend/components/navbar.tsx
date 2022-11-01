@@ -1,9 +1,8 @@
-import { NextPage } from 'next';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
-const Navbar: NextPage = () => {
+const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (

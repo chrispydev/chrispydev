@@ -1,7 +1,6 @@
-import { NextPage } from 'next';
 import { motion } from 'framer-motion';
 
-const Header: NextPage = () => {
+const Header = () => {
   const scaleVariants = {
     whileInView: {
       scale: [0, 1],
