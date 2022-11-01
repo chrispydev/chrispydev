@@ -1,22 +1,16 @@
-interface props {
-  active: string;
-}
-
-const NavigationDots: props = ({ active }: string) => {
-  return (
-    <div className='app_navgation'>
-      {['home', 'about', 'work', 'skills', 'testimonial', 'contact'].map(
-        (item, index) => (
-          <a
-            key={index}
-            className='app__navigation-dot'
-            style={active === item ? { backgroundColor: '#313BAC' } : undefined}
-            href={`#${item}`}
-          />
-        )
-      )}
-    </div>
-  );
-};
+const NavigationDots = ({ active }: any) => (
+  <div className='app__navigation'>
+    {['home', 'about', 'work', 'skills', 'testimonial', 'contact'].map(
+      (item, index) => (
+        <a
+          href={`#${item}`}
+          key={item + index}
+          className='app__navigation-dot'
+          style={active === item ? { backgroundColor: '#313BAC' } : {}}
+        />
+      )
+    )}
+  </div>
+);
 
 export default NavigationDots;

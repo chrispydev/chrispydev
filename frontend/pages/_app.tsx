@@ -11,15 +11,16 @@ import NavigationDots from '../components/navigationDots';
 import SocialMedia from '../components/socialMedia';
 
 import type { AppProps } from 'next/app';
+import React from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
 
 export const MyAppWrapper = (
-  classNames: string,
+  Components: any,
   idName: string,
-  Components: any
+  classNames?: string
 ) =>
   function HOC() {
     return (

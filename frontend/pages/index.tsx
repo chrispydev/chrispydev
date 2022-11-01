@@ -1,17 +1,19 @@
 import type { NextPage, GetServerSideProps } from 'next';
-import { sanityClient } from '../sanity';
+// import { sanityClient } from '../sanity';
 
 import Header from '../components/header';
 import Navbar from '../components/navbar';
 import About from '../components/about';
 import { AboutProps } from '../types/types';
 
-interface HomeProps {
+interface abouts {
   abouts: AboutProps[];
 }
+interface InnerProps {
+  abouts: abouts;
+}
 
-const Home: NextPage<HomeProps> = ({ abouts }) => {
-  console.log(abouts);
+const Home: NextPage<InnerProps> = ({ abouts: { abouts } }) => {
   return (
     <div className='app'>
       <Navbar />
@@ -24,8 +26,8 @@ const Home: NextPage<HomeProps> = ({ abouts }) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const query = '*[_type == "abouts"]';
-  const abouts = await sanityClient.fetch(query);
+  const req = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/getAbout`);
+  const abouts = await req.json();
 
   return {
     props: { abouts },
