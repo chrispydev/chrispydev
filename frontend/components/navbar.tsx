@@ -1,8 +1,8 @@
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
