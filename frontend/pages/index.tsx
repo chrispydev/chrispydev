@@ -7,20 +7,20 @@ import About from '../components/about';
 import { AboutProps, WorkProps } from '../types/types';
 import Work from '../components/work';
 
-interface abouts {
+interface aboutsProps {
   abouts: AboutProps[];
 }
 
-interface work {
+interface workProps {
   work: WorkProps[];
 }
 
-interface InnerProps {
-  abouts: abouts;
-  work: work;
+interface Props {
+  abouts: aboutsProps;
+  work: workProps;
 }
 
-const Home: NextPage<InnerProps> = ({ abouts: { abouts }, work: { work } }) => {
+const Home: NextPage<Props> = ({ abouts: { abouts }, work: { work } }) => {
   return (
     <div className='app'>
       <Navbar />

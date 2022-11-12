@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { WorkProps } from '../types/types';
 
-interface WorkPageProps {
+interface Props {
   work: WorkProps[];
 }
 
-const Work: React.FC<WorkPageProps> = () => {
+const Work: React.FC<Props> = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
