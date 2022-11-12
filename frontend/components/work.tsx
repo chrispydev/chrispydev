@@ -1,20 +1,45 @@
-import { useState, useEffect } from 'react';
-import { AiFillEye, AiFillGithub } from 'react-icons/ai';
+import React, { useState } from 'react';
+// import { AiFillEye, AiFillGithub } from 'react-icons/ai';
 import { motion } from 'framer-motion';
+import { WorkProps } from '../types/types';
 
-import { config, urlFor } from '../sanity';
+interface WorkPageProps {
+  work: WorkProps[];
+}
 
-type Props = {};
+const Work: React.FC<WorkPageProps> = () => {
+  const [activeFilter, setActiveFilter] = useState('All');
+  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 
-const work = (props: Props) => {
+  const handleWorkFilter = (item: any) => {};
+
   return (
     <>
       <h2 className='head-text'>
         My Creative <span>Portfolio</span>
       </h2>
-      <div className='app__work-fliter'></div>
+      <div className='app__work-fliter'>
+        {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map(
+          (item, index) => (
+            <div
+              key={index}
+              onClick={() => handleWorkFilter(index)}
+              className={`app__work-filter-item app__flex ${
+                activeFilter === item ? 'item-active' : ''
+              }`}
+            >
+              {item}
+            </div>
+          )
+        )}
+      </div>
+      <motion.div
+        animate={animateCard}
+        transition={{ duration: 0.5, delayChildren: 0.5 }}
+        className='app__work-portfolio'
+      ></motion.div>
     </>
   );
 };
 
-export default work;
+export default Work;
