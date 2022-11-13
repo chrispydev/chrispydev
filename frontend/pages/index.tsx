@@ -26,7 +26,7 @@ const Home: NextPage<Props> = ({ abouts: { abouts }, work: { work } }) => {
       <Navbar />
       <Header />
       <About abouts={abouts} />
-      <Work work={work} />
+      <Work works={work} />
     </div>
   );
 };
@@ -38,6 +38,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const reqWork = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/getWork`);
   const abouts = await reqAbout.json();
   const work = await reqWork.json();
+  console.log(work);
 
   return {
     props: { abouts, work },

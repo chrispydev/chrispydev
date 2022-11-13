@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { sanityClient } from '../../sanity';
 import { WorkProps } from '../../types/types';
 
-const query = '*[_type == "work"]';
+const query = '*[_type == "works"]';
 
 type Data = {
   work: WorkProps[];

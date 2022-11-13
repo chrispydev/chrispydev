@@ -6,7 +6,10 @@ export interface AboutProps {
 
 export interface WorkProps {
   title: string;
+  name: string;
   description: string;
   codeLink: string;
   imgUrl: string;
+  tags: string[];
+  projectLink: string;
 }
