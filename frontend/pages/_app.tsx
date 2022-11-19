@@ -1,17 +1,14 @@
-import '../styles/index.scss';
 import '../styles/globals.css';
-import '../componentsStyles/Header.scss';
-import '../componentsStyles/Skills.scss';
-import '../componentsStyles/Testimonial.scss';
-import '../componentsStyles/Work.scss';
-import '../componentsStyles/Navbar.scss';
-import '../componentsStyles/About.scss';
 
 import type { AppProps } from 'next/app';
-import React from 'react';
+import Main from '../components/layout/main';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <Main>
+      <Component {...pageProps} />
+    </Main>
+  );
 }
 
 export default MyApp;

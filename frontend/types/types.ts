@@ -13,3 +13,23 @@ export interface WorkProps {
   tags: string[];
   projectLink: string;
 }
+
+export interface SkillsProps {
+  name: string;
+  bgColor: string;
+  icon: string;
+}
+
+interface work {
+  name: string;
+  company: string
+  desc: string
+}
+
+export interface ExperienceProps {
+  name: string;
+  company: string;
+  desc: string;
+  year: string;
+  works: work[];
+}
