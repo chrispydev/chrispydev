@@ -12,8 +12,8 @@ const Navbar: React.FC = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div className='relative'>
-      <nav className='static top-0 left-0 z-50 w-full bg-plColor py-2 px-7 flex justify-between md:justify-left lg:justify-center items-center shadow-md space-x-24'>
+    <div className='sticky top-0 right-0 z-50 w-full bg-plColor/40 backdrop-blur-sm'>
+      <nav className='py-2 md:px-7 px-2 flex justify-between md:justify-left lg:justify-center items-center shadow-md md:space-x-24'>
         <Link href='/'>
           <a className='flex justify-start items-center'>
             <FaCross className='text-sColor text-xl' />

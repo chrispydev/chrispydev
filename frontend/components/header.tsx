@@ -4,26 +4,41 @@ import Image from 'next/image';
 
 import HImage from '../public/header/profile.png';
 import Circle from '../public/header/circle.svg';
+import HCircle1 from '../public/header/flutter.png';
+import HCircle2 from '../public/header/python.png';
+import HCircle3 from '../public/header/react.png';
 
-const Header = () => {
+const scaleVariants = {
+  whileInView: {
+    scale: [0, 1],
+    opacity: [0, 1],
+    transition: {
+      duration: 1,
+      ease: 'easeInOut',
+    },
+  },
+};
+
+const Header: React.FC = () => {
   return (
-    <header className='flex-1 w-full h-full flex flex-row pt-24 pr-8 pb-0 pl-0'>
+    <header className='app__header app__flex'>
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5 }}
-        className='flex-[0.65] flex flex-col justify-start items-start h-full my-0 mx-8'
+        className='app__header-info'
       >
+        {' '}
         <div className='app__header-badge'>
           <div className='badge-cmp app__flex'>
             <span>👋</span>
-            <div style={{ marginLeft: 20 }}>
+            <div className='ml-1 md:ml-4'>
               <p className='p-text'>Hello, I am</p>
-              <h1 className='head-text'>Micael</h1>
+              <h1 className='head-text'>Christian</h1>
             </div>
           </div>
 
           <div className='tag-cmp app__flex'>
-            <p className='p-text'>Web Developer</p>
+            <p className='p-text'>A Full Stack Developer</p>
             <p className='p-text'>Freelancer</p>
           </div>
         </div>
@@ -34,14 +49,34 @@ const Header = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className='app__header-img'
       >
-        <Image src={HImage} alt='profile_bg' width={'60%'} height={'60%'} />
+        <Image
+          src={HImage}
+          alt='profile_bg'
+          className='z-10 object-contain w-full'
+        />
         <motion.img
           whileInView={{ scale: [0, 1] }}
           transition={{ duration: 1, ease: 'easeInOut' }}
-          src={Circle}
+          src={Circle.src}
           alt='profile_circle'
           className='overlay_circle'
         />
+      </motion.div>
+
+      <motion.div
+        variants={scaleVariants}
+        whileInView={scaleVariants.whileInView}
+        className='app__header-circles'
+      >
+        {[HCircle1, HCircle2, HCircle3].map((circle, index) => (
+          <div className='circle-cmp app__flex' key={`circle-${index}`}>
+            <Image
+              src={circle}
+              alt='profile_bg'
+              className='w-full object-contain  z-10'
+            />
+          </div>
+        ))}
       </motion.div>
     </header>
   );
