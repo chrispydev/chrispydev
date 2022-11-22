@@ -11,6 +11,7 @@ import Heading from './heading';
 import SocialLink from './socialLink';
 import SectionComponent from './sectionComponent';
 import FooterText from './footerText';
+import FormSection from './formSection';
 
 const About: React.FC = () => {
   return (
@@ -107,42 +108,7 @@ const About: React.FC = () => {
       </article>
       <article className='mt-4'>
         <Heading underline text='Direct Message Me' />
-        <form className='py-3'>
-          <div className='grid grid-cols-12 gap-4'>
-            <div className='col-span-12 md:col-span-6'>
-              <input
-                required
-                placeholder='Full Name'
-                type='text'
-                name='Full Name'
-                autoComplete='given-name'
-                className='mt-1 focus:ring-sColor focus:border-sColor  block w-full shadow-md sm:text-sm border-dColor rounded-md'
-              />
-            </div>
-            <div className='col-span-12 md:col-span-6'>
-              <input
-                required
-                placeholder='Email Address'
-                type='Email'
-                name='email'
-                autoComplete='email'
-                className='mt-1 focus:ring-sColor focus:border-sColor  block w-full shadow-md sm:text-sm border-dColor rounded-md'
-              />
-            </div>
-            <div className='col-span-12'>
-              <textarea
-                required
-                placeholder='Enter your message'
-                name='first-name'
-                autoComplete='given-name'
-                className='mt-1 focus:ring-sColor focus:border-sColor  block w-full shadow-md sm:text-sm border-dColor rounded-md'
-              />
-            </div>
-          </div>
-          <button className='bg-sColor py-2 px-4 my-2 text-white rounded-md'>
-            Send Message
-          </button>
-        </form>
+        <FormSection />
       </article>
       <FooterText />
     </SectionComponent>

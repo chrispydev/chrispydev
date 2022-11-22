@@ -30,7 +30,6 @@ const Navbar: React.FC = () => {
             icon={<BsGithub className='mr-1' />}
             lTag='https://github.com/chrispydev/chrispydev-portfolio'
           />
-          <NextLink lName='Blog' />
         </ul>
 
         <div className='flex justify-center items-center space-x-2'>
@@ -71,8 +70,11 @@ const Navbar: React.FC = () => {
           className='md:hidden z-30 absolute block right-0 bg-white py-2 px-2 mr-2 shadow-sm space-y-3'
         >
           <NextLink lName='Work' />
-          <NextLink lName='Blog' />
-          <NextLink lName='Source' icon={<BsGithub className='mr-1' />} />
+          <NextLink
+            lName='Source'
+            icon={<BsGithub className='mr-1' />}
+            lTag='https://github.com/chrispydev/chrispydev-portfolio'
+          />
         </motion.ul>
       )}
     </div>
