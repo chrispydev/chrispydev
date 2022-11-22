@@ -3,10 +3,12 @@ import '../styles/header.scss';
 
 import type { AppProps } from 'next/app';
 import Main from '../components/layout/main';
+import Navbar from '../components/navbar';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Main>
+      <Navbar />
       <Component {...pageProps} />
     </Main>
   );

@@ -25,7 +25,11 @@ const Navbar: React.FC = () => {
 
         <ul className='md:flex justify-between items-center hidden space-x-6 font-medium text-gray-700'>
           <NextLink lName='Work' />
-          <NextLink lName='Source' icon={<BsGithub className='mr-1' />} />
+          <NextLink
+            lName='Source'
+            icon={<BsGithub className='mr-1' />}
+            lTag='https://github.com/chrispydev/chrispydev-portfolio'
+          />
           <NextLink lName='Blog' />
         </ul>
 

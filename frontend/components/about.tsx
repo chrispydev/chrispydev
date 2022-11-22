@@ -9,10 +9,12 @@ import AtomGram from '../public/bio/atomgram.png';
 
 import Heading from './heading';
 import SocialLink from './socialLink';
+import SectionComponent from './sectionComponent';
+import FooterText from './footerText';
 
-const AboutSection: React.FC = () => {
+const About: React.FC = () => {
   return (
-    <section className=' px-5 lg:px-0 lg:max-w-[40%] mx-auto'>
+    <SectionComponent>
       <div className='rounded-xl text-xs md:text-sm bg-plColor backdrop-blur-sm py-2 px-4 m-2'>
         <p>Hello, I am a Full Stack Developer based Ghana</p>
       </div>
@@ -34,7 +36,7 @@ const AboutSection: React.FC = () => {
         </div>
       </article>
       <article className='mt-7'>
-        <Heading text='Work' />
+        <Heading underline text='Work' />
         <div className='text-sm font-[400] text-gray-800'>
           <p className='mt-2 flex'>
             <span className='ml-5' /> Chrispydev is a Christian who loves{' '}
@@ -53,7 +55,7 @@ const AboutSection: React.FC = () => {
         </div>
       </article>
       <article className='mt-7'>
-        <Heading text='Bio' />
+        <Heading underline text='Bio' />
         <div className='flex justify-between items-start space-x-5 text-sm text-gray-800 mt-2'>
           <div className='font-bold space-y-3'>
             <h5>2017</h5>
@@ -71,7 +73,7 @@ const AboutSection: React.FC = () => {
         </div>
       </article>
       <article className='mt-7'>
-        <Heading text='Social Media' />
+        <Heading underline text='Social Media' />
         <div className='flex flex-col justify-start items-start mt-2 space-y-4'>
           <SocialLink
             link='https://www.github.com/chrispydev'
@@ -104,7 +106,7 @@ const AboutSection: React.FC = () => {
         </div>
       </article>
       <article className='mt-4'>
-        <Heading text='Direct Message Me' />
+        <Heading underline text='Direct Message Me' />
         <form className='py-3'>
           <div className='grid grid-cols-12 gap-4'>
             <div className='col-span-12 md:col-span-6'>
@@ -142,11 +144,8 @@ const AboutSection: React.FC = () => {
           </button>
         </form>
       </article>
-      <article className='mt-4 text-gray-800 font-[400] text-sm'>
-        &copy; {new Date().getFullYear()} Christian Owusu - contains code from
-        Takuya Matsuyama{' '}
-      </article>
-    </section>
+      <FooterText />
+    </SectionComponent>
   );
 };
-export default AboutSection;
+export default About;

@@ -19,7 +19,11 @@ const scaleVariants = {
   },
 };
 
-const Header: React.FC = () => {
+interface Props {
+  intro: string;
+}
+
+const Header: React.FC<Props> = ({ intro }) => {
   return (
     <header className='app__header app__flex'>
       <motion.div
@@ -39,7 +43,7 @@ const Header: React.FC = () => {
 
           <div className='tag-cmp app__flex'>
             <p className='p-text'>A Full Stack Developer</p>
-            <p className='p-text'>Freelancer</p>
+            <p className='p-text'>{intro}</p>
           </div>
         </div>
       </motion.div>
