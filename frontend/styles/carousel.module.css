@@ -13,7 +13,7 @@
 
 .slide {
   flex: 0 0 auto;
-  max-width: min(60%, 500px);
+  max-width: min(70%, 531px);
   opacity: 0.4;
   transition: opacity 0.4s;
 }

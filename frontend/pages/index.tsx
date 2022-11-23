@@ -12,11 +12,11 @@ export default function Home() {
       <Header intro='Freelancer' />
       <About />
       <SectionComponent>
-        <article className='mt-4 text-center'>
-          <Heading text="What our Customer's say" underline />
+        <article className='mt-9 text-center'>
+          {/*<Heading text="What our Customer's say" underline />*/}
           <Testimonials />
         </article>
-        <article className='mt-4'>
+        <article className='mt-7'>
           <Heading underline text='Direct Message Me' />
           <FormSection />
         </article>
