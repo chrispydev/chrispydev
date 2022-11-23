@@ -22,8 +22,8 @@ export interface SkillsProps {
 
 interface work {
   name: string;
-  company: string
-  desc: string
+  company: string;
+  desc: string;
 }
 
 export interface ExperienceProps {
