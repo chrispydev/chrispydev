@@ -12,6 +12,7 @@ import SocialLink from './socialLink';
 import SectionComponent from './sectionComponent';
 import FooterText from './footerText';
 import FormSection from './formSection';
+import Testimonials from './testimonial';
 
 const About: React.FC = () => {
   return (
@@ -106,11 +107,6 @@ const About: React.FC = () => {
           />
         </div>
       </article>
-      <article className='mt-4'>
-        <Heading underline text='Direct Message Me' />
-        <FormSection />
-      </article>
-      <FooterText />
     </SectionComponent>
   );
 };
