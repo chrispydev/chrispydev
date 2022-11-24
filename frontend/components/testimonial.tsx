@@ -1,29 +1,23 @@
 import React from 'react';
+import { testimonials } from '../types/types';
 import Carousel from './carousel';
 import CarouselItem from './carousel-item';
 import Review from './review';
 
-const Testimonials: React.FC = () => {
+interface Props {
+  testimonials: testimonials[];
+}
+
+const Testimonials: React.FC<Props> = ({ testimonials }) => {
   return (
     <Carousel className='bg-pColor text-dColor py-4'>
-      <CarouselItem index={0}>
-        <Review by='Axel (Showtime)'>
-          Margel and Showtime both share the love for high quality software and
-          the passion fo building something people want
-        </Review>
-      </CarouselItem>{' '}
-      <CarouselItem index={1}>
-        <Review by='Axel (Showtime)'>
-          Margel and Showtime both share the love for high quality software and
-          the passion fo building something people want
-        </Review>
-      </CarouselItem>
-      <CarouselItem index={2}>
-        <Review by='Axel (Showtime)'>
-          Margel and Showtime both share the love for high quality software and
-          the passion fo building something people want
-        </Review>
-      </CarouselItem>
+      {testimonials.map((testimonial, index) => (
+        <CarouselItem index={index}>
+          <Review by={`${testimonial.name}(${testimonial.company})`}>
+            {testimonial.feedback}
+          </Review>
+        </CarouselItem>
+      ))}
     </Carousel>
   );
 };
