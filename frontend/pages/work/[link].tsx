@@ -1,7 +1,5 @@
-import React, { NextPage } from 'next';
-import { GetStaticPaths } from 'next';
-
-// import { PortableText } from '@portabletext/react';
+import React from 'react';
+import { GetStaticPaths, NextPage } from 'next';
 
 import PortableText from '@sanity/block-content-to-react';
 
@@ -18,16 +16,18 @@ interface Props {
 const WorkDetail: NextPage<Props> = ({ filtedWork }) => {
   return (
     <section>
-      <Header intro='My work' />
+      <Header intro='Work details👇' />
       {filtedWork.map((wBody: Works, index) => (
         <article className='my-4' key={index}>
           <SectionComponent>
             <Heading text={`${wBody.title}`} underline />
-            <PortableText
-              blocks={wBody.body}
-              projectId={config.projectId}
-              dataset={config.dataset}
-            />
+            <div className='body__style'>
+              <PortableText
+                blocks={wBody.body}
+                projectId={config.projectId}
+                dataset={config.dataset}
+              />
+            </div>
           </SectionComponent>
         </article>
       ))}
@@ -36,22 +36,6 @@ const WorkDetail: NextPage<Props> = ({ filtedWork }) => {
 };
 
 export default WorkDetail;
-
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/getWork`);
-//   const workName = await res.json();
-//
-//   const { works } = workName;
-//
-//   const paths = works.map((work: Works) => ({
-//     params: { link: `${work.link}` },
-//   }));
-//
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const query = '*[_type == "works"]';
@@ -77,16 +61,3 @@ export async function getStaticProps({ params: { link } }) {
     props: { filtedWork },
   };
 }
-
-// export async function getStaticProps({ params: { link } }) {
-//   const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/getWork`);
-//
-//   const workName = await res.json();
-//
-//   const { works } = workName;
-//   const filtedWork = works.filter((work: Works) => work.link == link);
-//
-//   return {
-//     props: { filtedWork },
-//   };
-// }

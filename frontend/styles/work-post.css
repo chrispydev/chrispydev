@@ -1,0 +1,35 @@
+.body__style {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+  margin-top: 1rem;
+}
+
+.body__style a {
+  color: #158247;
+}
+
+.body__style img {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.body__style p strong {
+  font-size: 1.4rem;
+}
+
+.body__style p {
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+  margin-bottom: 1rem;
+}
+
+.body__style ul {
+  list-style-type: square;
+  font-size: 0.85rem;
+}
+
+.body__style blockquote {
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+  margin-bottom: 1rem;
+}

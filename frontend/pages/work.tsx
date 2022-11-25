@@ -17,14 +17,14 @@ interface Props {
 const Work: NextPage<Props> = ({ works }) => {
   return (
     <>
-      <Header intro='He is my work 👇' />
+      <Header intro='Here is my work 👇' />
       <SectionComponent>
         <div className='mt-4'>
           <Heading text='Work' />
         </div>
         <article className='grid md:grid-cols-2 gap-7 mt-4 mb-8'>
-          {works.map((work) => (
-            <a href={`work/${work.link}`}>
+          {works.map((work, index) => (
+            <a href={`work/${work.link}`} key={index}>
               <Image
                 src={`${urlFor(work.imgUrl)}`}
                 alt='instagram project'

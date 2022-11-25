@@ -10,9 +10,6 @@ import AtomGram from '../public/bio/atomgram.png';
 import Heading from './heading';
 import SocialLink from './socialLink';
 import SectionComponent from './sectionComponent';
-import FooterText from './footerText';
-import FormSection from './formSection';
-import Testimonials from './testimonial';
 
 const About: React.FC = () => {
   return (

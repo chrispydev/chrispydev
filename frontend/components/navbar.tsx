@@ -31,8 +31,8 @@ const Navbar: React.FC = () => {
             lTag='https://github.com/chrispydev/chrispydev-portfolio'
           />
         </ul>
-
         <div className='flex justify-center items-center space-x-2'>
+          {/*
           {s ? (
             <motion.button
               initial={{ y: -20, opacity: 0 }}
@@ -54,6 +54,7 @@ const Navbar: React.FC = () => {
               <BsMoonFill className='text-white' />
             </motion.button>
           )}
+*/}
           <button
             onClick={() => setToggle(!toggle)}
             className='bg-sColor p-2 rounded-md cursor-pointer block md:hidden'
