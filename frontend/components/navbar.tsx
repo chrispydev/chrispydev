@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   return (
     <div className='sticky top-0 right-0 z-50 w-full bg-plColor/40 backdrop-blur-sm'>
       <nav className='py-2 md:px-7 px-2 flex justify-between md:justify-left lg:justify-center items-center shadow-md md:space-x-24'>
-        <Link href='/'>
+        <Link href='/' legacyBehavior>
           <a className='flex justify-start items-center'>
             <FaCross className='text-sColor text-xl' />
             <h3 className='text-xl lg:text-2xl tracking-tighter font-bold text-gray-700'>

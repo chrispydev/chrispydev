@@ -17,7 +17,7 @@ const WorkDetail: NextPage<Props> = ({ filtedWork }) => {
   return (
     <section>
       <Header intro='Work details👇' />
-      {filtedWork.map((wBody: Works, index) => (
+      {filtedWork.map((wBody: Works, index: number) => (
         <article className='my-4' key={index}>
           <SectionComponent>
             <Heading text={`${wBody.title}`} underline />
