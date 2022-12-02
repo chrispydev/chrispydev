@@ -15,7 +15,7 @@ const Main: React.FC<Props> = ({ children }) => {
         <meta name='author' content='chrispydev' />
         <link rel='apple-touch-icon' href='apple-touch-icon.png' />
         <link rel='shortcut icon' href='/favicon.ico' type='image/x-icon' />
-        <title>Chrispydev - Homepage</title>
+        <title>Chrispydev</title>
       </Head>
       {children}
     </main>

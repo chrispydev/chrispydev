@@ -16,9 +16,9 @@ const NextLink: React.FC<Props> = ({ lName, icon, lTag }) => {
         </a>
       ) : (
         <Link href={`/${lName.toLowerCase()}`} legacyBehavior>
-          <div className='flex justify-between items-center'>
+          <a className='flex justify-between items-center'>
             {icon && icon} {lName}
-          </div>
+          </a>
         </Link>
       )}
       <span className='hidden group-hover:block absolute w-2 h-2 bg-dColor rounded-full top-5 left-[50%]' />

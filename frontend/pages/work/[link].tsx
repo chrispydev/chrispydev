@@ -1,6 +1,7 @@
 import React from 'react';
 import { GetStaticPaths, NextPage } from 'next';
 
+// @ts-ignore
 import PortableText from '@sanity/block-content-to-react';
 
 import Header from '../../components/header';
@@ -51,6 +52,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
+// @ts-ignore
 export async function getStaticProps({ params: { link } }) {
   const query = '*[_type == "works"]';
   const works = await sanityClient.fetch(query);

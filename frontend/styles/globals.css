@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './work.css';
+@import './header.css';
 
 body {
   background-color: #e3d5ca;

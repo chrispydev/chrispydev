@@ -13,7 +13,7 @@ module.exports = {
         dColor: '#158247',
       },
       fontFamily: {
-        sono: "'Sono', sans-serif;'",
+        sonoFont: "'Sono', sans-serif'",
       },
     },
   },

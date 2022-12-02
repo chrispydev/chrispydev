@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { FaCross } from 'react-icons/fa';
 
 const Navbar: React.FC = () => {
-  const [s, setS] = useState(false);
+  // const [s, setS] = useState(false);
   const [toggle, setToggle] = useState(false);
 
   return (

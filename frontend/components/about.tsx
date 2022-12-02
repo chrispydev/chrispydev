@@ -30,13 +30,13 @@ const About: React.FC = () => {
             alt='About Image'
             width={100}
             height={100}
-            className='rounded-full bg-sColor'
+            className='rounded-full bg-sColor w-[120px] h-[120px]'
           />
         </div>
       </article>
       <article className='mt-7'>
         <Heading underline text='Work' />
-        <div className='text-sm font-[400] text-gray-800'>
+        <div className='text-sm font-light text-gray-800'>
           <p className='mt-2 flex'>
             <span className='ml-5' /> Chrispydev is a Christian who loves{' '}
             ministry
@@ -61,7 +61,7 @@ const About: React.FC = () => {
             <h5>2018</h5>
             <h5>2020 </h5>
           </div>
-          <div className='font-[400] space-y-3'>
+          <div className='font-light space-y-3'>
             <p> Graduted from West Africa Senior High School</p>
             <p>Started coding right after high school in 2017</p>
             <p>

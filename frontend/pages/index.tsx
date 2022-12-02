@@ -1,12 +1,13 @@
 import { GetServerSideProps, NextPage } from 'next';
-
 import About from '../components/about';
 import FooterText from '../components/footerText';
 import FormSection from '../components/formSection';
+
 import Header from '../components/header';
 import Heading from '../components/heading';
 import SectionComponent from '../components/sectionComponent';
 import Testimonials from '../components/testimonial';
+
 import { testimonials } from '../types/types';
 
 interface Props {

@@ -1,12 +1,10 @@
 import '../styles/globals.css';
-import '../styles/header.scss';
-import '../styles/work-post.css';
-
 import type { AppProps } from 'next/app';
+
 import Main from '../components/layout/main';
 import Navbar from '../components/navbar';
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <Main>
       <Navbar />
@@ -14,5 +12,3 @@ function MyApp({ Component, pageProps }: AppProps) {
     </Main>
   );
 }
-
-export default MyApp;

@@ -8,7 +8,7 @@ interface Props {
 
 const SocialLink: React.FC<Props> = ({ link, icon, lName }) => {
   return (
-    <div className='text-dColor flex justify-center items-center space-x-2'>
+    <div className='text-dColor font-light flex justify-center items-center space-x-2'>
       {icon}
       <a href={link}>{lName}</a>
     </div>
