@@ -1,14 +1,14 @@
-import React from 'react';
-import Image from 'next/image';
-import { GetServerSideProps, NextPage } from 'next';
+import React from "react";
+import Image from "next/image";
+import { GetServerSideProps, NextPage } from "next";
 
-import Header from '../components/header';
-import Heading from '../components/heading';
-import SectionComponent from '../components/sectionComponent';
+import Header from "../components/header";
+import Heading from "../components/heading";
+import SectionComponent from "../components/sectionComponent";
 
-import FooterText from '../components/footerText';
-import { Works } from '../types/types';
-import { urlFor } from '../sanity';
+import FooterText from "../components/footerText";
+import { Works } from "../types/types";
+import { urlFor } from "../sanity";
 
 interface Props {
   works: Works[];
@@ -17,23 +17,23 @@ interface Props {
 const Work: NextPage<Props> = ({ works }) => {
   return (
     <>
-      <Header intro='Here is my work 👇' />
+      <Header intro="Here is my work 👇" />
       <SectionComponent>
-        <div className='mt-4'>
-          <Heading text='Work' />
+        <div className="mt-4">
+          <Heading text="Work" />
         </div>
-        <article className='grid md:grid-cols-2 gap-7 mt-4 mb-8'>
+        <article className="grid md:grid-cols-2 gap-7 mt-4 mb-8">
           {works.map((work, index) => (
             <a href={`work/${work.link}`} key={index}>
               <Image
                 src={`${urlFor(work.imgUrl)}`}
-                alt='instagram project'
-                className='rounded-lg shadow-md object-cover'
+                alt="instagram project"
+                className="rounded-lg shadow-md object-cover"
                 width={400}
                 height={320}
               />
-              <h4 className='text-xl font-bold text-gray-800'>{work.title} </h4>
-              <p className='text-sm font-light'>{work.description}</p>
+              <h4 className="text-xl font-bold text-gray-800">{work.title} </h4>
+              <p className="text-sm font-light">{work.description}</p>
             </a>
           ))}
         </article>

@@ -1,14 +1,14 @@
-import React from 'react';
-import { GetStaticPaths, NextPage } from 'next';
+import React from "react";
+import { GetStaticPaths, NextPage } from "next";
 
 // @ts-ignore
-import PortableText from '@sanity/block-content-to-react';
+import PortableText from "@sanity/block-content-to-react";
 
-import Header from '../../components/header';
-import { Works } from '../../types/types';
-import Heading from '../../components/heading';
-import { config, sanityClient } from '../../sanity';
-import SectionComponent from '../../components/sectionComponent';
+import Header from "../../components/header";
+import { Works } from "../../types/types";
+import Heading from "../../components/heading";
+import { config, sanityClient } from "../../sanity";
+import SectionComponent from "../../components/sectionComponent";
 
 interface Props {
   filtedWork: Works[];
@@ -17,12 +17,12 @@ interface Props {
 const WorkDetail: NextPage<Props> = ({ filtedWork }) => {
   return (
     <section>
-      <Header intro='Work details👇' />
+      <Header intro="Work details👇" />
       {filtedWork.map((wBody: Works, index: number) => (
-        <article className='my-4' key={index}>
+        <article className="my-4" key={index}>
           <SectionComponent>
             <Heading text={`${wBody.title}`} underline />
-            <div className='body__style'>
+            <div className="body__style break-all">
               <PortableText
                 blocks={wBody.body}
                 projectId={config.projectId}

@@ -1,37 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import NextLink from './NextLink';
-import { BsFillSunFill, BsGithub, BsMoonFill } from 'react-icons/bs';
-import { motion } from 'framer-motion';
-import { GoThreeBars } from 'react-icons/go';
-import Link from 'next/link';
-import { FaCross } from 'react-icons/fa';
+import NextLink from "./NextLink";
+import { BsGithub } from "react-icons/bs";
+// import { BsFillSunFill, BsGithub, BsMoonFill } from 'react-icons/bs';
+import { motion } from "framer-motion";
+import { GoThreeBars } from "react-icons/go";
+import Link from "next/link";
+import { FaCross } from "react-icons/fa";
 
 const Navbar: React.FC = () => {
   // const [s, setS] = useState(false);
   const [toggle, setToggle] = useState(false);
 
+  function dropDown() {
+    console.log("Hello World");
+    // setTimeout(() => {
+    //   setToggle(false);
+    // }, 500);
+  }
+
   return (
-    <div className='sticky top-0 right-0 z-50 w-full bg-plColor/40 backdrop-blur-sm'>
-      <nav className='py-2 md:px-7 px-2 flex justify-between md:justify-left lg:justify-center items-center shadow-md md:space-x-24'>
-        <Link href='/' legacyBehavior>
-          <a className='flex justify-start items-center'>
-            <FaCross className='text-sColor text-xl' />
-            <h3 className='text-xl lg:text-2xl tracking-tighter font-bold text-gray-700'>
+    <div className="sticky top-0 right-0 z-50 w-full bg-plColor/40 backdrop-blur-sm">
+      <nav className="py-2 md:px-7 px-2 flex justify-between md:justify-left lg:justify-center items-center shadow-md md:space-x-24">
+        <Link href="/" legacyBehavior>
+          <a className="flex justify-start items-center">
+            <FaCross className="text-sColor text-xl" />
+            <h3 className="text-xl lg:text-2xl tracking-tighter font-bold text-gray-700">
               Chrispydev
             </h3>
           </a>
         </Link>
 
-        <ul className='md:flex justify-between items-center hidden space-x-6 font-medium text-gray-700'>
-          <NextLink lName='Work' />
+        <ul className="md:flex justify-between items-center hidden space-x-6 font-medium text-gray-700">
+          <NextLink lName="Work" />
           <NextLink
-            lName='Source'
-            icon={<BsGithub className='mr-1' />}
-            lTag='https://github.com/chrispydev/chrispydev-portfolio'
+            lName="Source"
+            icon={<BsGithub className="mr-1" />}
+            lTag="https://github.com/chrispydev/chrispydev-portfolio"
           />
         </ul>
-        <div className='flex justify-center items-center space-x-2'>
+        <div className="flex justify-center items-center space-x-2">
           {/*
           {s ? (
             <motion.button
@@ -57,7 +65,7 @@ const Navbar: React.FC = () => {
 */}
           <button
             onClick={() => setToggle(!toggle)}
-            className='bg-sColor p-2 rounded-md cursor-pointer block md:hidden'
+            className="bg-sColor p-2 rounded-md cursor-pointer block md:hidden"
           >
             <GoThreeBars />
           </button>
@@ -68,13 +76,13 @@ const Navbar: React.FC = () => {
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
-          className='md:hidden z-30 absolute block right-0 bg-white py-2 px-2 mr-2 shadow-sm space-y-3'
+          className="md:hidden z-30 absolute block right-0 bg-white py-2 px-2 mr-2 shadow-sm space-y-3"
         >
-          <NextLink lName='Work' />
+          <NextLink onClick={() => setToggle(false)} lName="Work" />
           <NextLink
-            lName='Source'
-            icon={<BsGithub className='mr-1' />}
-            lTag='https://github.com/chrispydev/chrispydev-portfolio'
+            lName="Source"
+            icon={<BsGithub className="mr-1" />}
+            lTag="https://github.com/chrispydev/chrispydev-portfolio"
           />
         </motion.ul>
       )}

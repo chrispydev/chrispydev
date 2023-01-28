@@ -32,7 +32,7 @@ const Header: React.FC<Props> = ({ intro }) => {
         className='app__header__info'
       >
         <div className='app__header__badge'>
-          <div className='badge-cmp app__flex'>
+          <div className='badge-cmp app__flex sm:-mt-2 mt-4'>
             <span>👋</span>
             <div className='ml-1 md:ml-4'>
               <p className='p-text'>Hello, I am</p>

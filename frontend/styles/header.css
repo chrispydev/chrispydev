@@ -4,7 +4,7 @@
   height: 100%;
   flex-direction: row;
 
-  padding: 6rem 2rem 0rem;
+  padding: 2rem 2rem 0rem;
 }
 
 .app__header-info {
@@ -200,6 +200,10 @@
 }
 
 @media screen and (max-width: 425px) {
+  .app__header {
+    padding: 0rem 2rem 0rem;
+  }
+
   .app__header-circles div {
     display: none;
   }
@@ -207,7 +211,7 @@
 
 @media screen and (max-width: 450px) {
   .app__header {
-    padding: 6rem 1rem 2rem;
+    padding: 1.5rem 1rem 2rem;
   }
 
   .head-text {
