@@ -12,12 +12,12 @@ const Navbar: React.FC = () => {
   // const [s, setS] = useState(false);
   const [toggle, setToggle] = useState(false);
 
-  function dropDown() {
-    console.log("Hello World");
-    // setTimeout(() => {
-    //   setToggle(false);
-    // }, 500);
-  }
+  // function dropDown() {
+  //   console.log("Hello World");
+  //   // setTimeout(() => {
+  //   //   setToggle(false);
+  //   // }, 500);
+  // }
 
   return (
     <div className="sticky top-0 right-0 z-50 w-full bg-plColor/40 backdrop-blur-sm">
