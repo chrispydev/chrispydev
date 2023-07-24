@@ -21,6 +21,7 @@ const Home: NextPage<Props> = ({ testimonials }) => {
       <About />
       <SectionComponent>
         <article className="mt-9 text-center">
+          <Heading underline text="Testimonials" />
           <Testimonials testimonials={testimonials} />
         </article>
         <article className="mt-7">

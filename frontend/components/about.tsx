@@ -1,15 +1,16 @@
 import Image from "next/image";
 import React from "react";
 import { AiFillTwitterCircle, AiOutlineGithub } from "react-icons/ai";
-import { FaCross } from "react-icons/fa";
+import { FaArrowRight, FaCross } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
 
-import AboutImage from "../public/about/about.png";
+import AboutImage from "../public/about.jpg";
 import AtomGram from "../public/bio/atomgram.png";
 
 import Heading from "./heading";
 import SocialLink from "./socialLink";
 import SectionComponent from "./sectionComponent";
+import Link from "next/link";
 
 const About: React.FC = () => {
   return (
@@ -21,8 +22,11 @@ const About: React.FC = () => {
         <div className="flex flex-col justify-start items-start mr-10">
           <h1 className="text-4xl font-bold">Christian Owusu</h1>
           <h4 className="text-xs lg:text-sm tracking-tighter text-gray-800">
-            (Man of God,Mobile dev, Web dev, Web scrapping)
+            Techno-Spiritual professional
           </h4>
+          <p className=" text-xs lg:text-sm tracking-tighter text-gray-800 font-bold">
+            A Christian✝️,/Web developer/Mobile Developer
+          </p>
         </div>
         <div className="flex justify-center items-center rounded-full border-white border-2 md:mt-0 mt-6">
           <Image
@@ -51,6 +55,12 @@ const About: React.FC = () => {
             framework, React, React Native, SvelteKit, Dart, and Flutter.{" "}
           </p>
         </div>
+        <Link href="/work">
+          <button className="p-2 mt-4 mx-auto text-white bg-sColor flex justify-center items-center rounded">
+            portfolio
+            <FaArrowRight />
+          </button>
+        </Link>
       </article>
       <article className="mt-7">
         <Heading underline text="Bio" />
