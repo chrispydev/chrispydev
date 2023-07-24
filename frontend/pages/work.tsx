@@ -28,12 +28,14 @@ const Work: NextPage<Props> = ({ works }) => {
               <Image
                 src={`${urlFor(work.imgUrl)}`}
                 alt="instagram project"
-                className="rounded-lg shadow-md object-cover"
+                className="rounded-lg shadow-md object-cover w-[300px] h-[140px]"
                 width={400}
                 height={320}
               />
-              <h4 className="text-xl font-bold text-gray-800">{work.title} </h4>
-              <p className="text-sm font-light">{work.description}</p>
+              <h4 className="text-lg font-bold text-gray-800">{work.title} </h4>
+              <p className="text-[0.8rem] font-light leading-4">
+                {work.description}
+              </p>
             </a>
           ))}
         </article>
