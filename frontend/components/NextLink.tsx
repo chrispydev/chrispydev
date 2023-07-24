@@ -9,7 +9,6 @@ interface Props {
 }
 
 const NextLink: React.FC<Props> = ({ lName, icon, lTag, onClick }) => {
-  console.log(onClick)
   return (
     <div className="relative group">
       {lTag ? (
@@ -18,10 +17,7 @@ const NextLink: React.FC<Props> = ({ lName, icon, lTag, onClick }) => {
         </a>
       ) : (
         <Link href={`/${lName.toLowerCase()}`} legacyBehavior>
-          <a
-        
-            className="flex justify-between items-center"
-          >
+          <a className="flex justify-between items-center">
             {icon && icon} {lName}
           </a>
         </Link>

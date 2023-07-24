@@ -1,11 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './work.css';
-@import './header.css';
+@import "./work.css";
+@import "./header.css";
 
 body {
   background-color: #e3d5ca;
   /* font-family: 'Roboto', sans-serif; */
-  font-family: 'Sono', sans-serif;
+  font-family: "Sono", sans-serif;
 }
