@@ -211,7 +211,7 @@
 
 @media screen and (max-width: 450px) {
   .app__header {
-    padding: 1.5rem 1rem 2rem;
+    padding: 1.5rem 1rem 0rem;
   }
 
   .head-text {
@@ -220,6 +220,17 @@
 }
 
 @media screen and (max-width: 480px) {
+  .app__header__badge span {
+    font-size: 2rem;
+  }
+  .head-text {
+    font-size: 1.8rem;
+  }
+
+  .p-text {
+    font-size: 0.7rem;
+  }
+
   .badge-cmp,
   .tag-cmp {
     padding: 0.6rem 1rem;
