@@ -61,5 +61,6 @@ export async function getStaticProps({ params: { link } }) {
 
   return {
     props: { filtedWork },
+    revalidate: 600, // Regenerate the page every 60 seconds
   };
 }

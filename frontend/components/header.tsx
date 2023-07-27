@@ -55,7 +55,7 @@ const Header: React.FC<Props> = ({ intro }) => {
         <Image
           src={HImage}
           alt="profile_bg"
-          className="z-10 object-contain w-full h-36 md:h-min"
+          className="z-10 object-contain w-full h-36 -mb-4 md:-mb-0 md:h-min"
         />
         <motion.img
           whileInView={{ scale: [0, 1] }}
