@@ -6,7 +6,6 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import works from './works';
 import testimonials from './testimonials';
 import blockContent from './blockContent';
-import location from './location';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -18,7 +17,6 @@ export default createSchema({
     works,
     testimonials,
     blockContent,
-    location,
     /* Your types here! */
   ]),
 });
