@@ -1,9 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { sanityClient } from '../../sanity';
-import { Works } from '../../types/types';
+import type { NextApiRequest, NextApiResponse } from "next";
+import { sanityClient } from "../../sanity";
+import { Works } from "../../types/types";
 
-const query = '*[_type == "works"]';
+const query = '*[_type == "works"] | order(_createdAt desc)';
 
 type Data = {
   works: Works[];
@@ -11,7 +11,7 @@ type Data = {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<Data>,
 ) {
   try {
     const works = await sanityClient.fetch(query);

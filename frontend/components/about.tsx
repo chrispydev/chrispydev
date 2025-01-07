@@ -69,13 +69,16 @@ const About: React.FC = () => {
             <h5>2017</h5>
             <h5>2018</h5>
             <h5>2020 </h5>
+            <h5>2024 </h5>
           </div>
           <div className="font-light space-y-3">
             <p> Graduted from West Africa Senior High School</p>
             <p>Started coding right after high school in 2017</p>
             <p>
-              <span className="font-bold">till now.</span> Got admitted into the
-              university and studing B.ed Computer Science
+              Got admitted into the university and studing B.ed Computer Science
+            </p>
+            <p>
+              <span className="font-bold">completed university(UCC)</span>
             </p>
           </div>
         </div>

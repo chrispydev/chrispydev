@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
           className="md:hidden z-30 absolute block right-0 bg-white py-2 px-2 mr-2 shadow-sm space-y-3"
         >
           <button onClick={() => setToggle(false)}>
-          <NextLink lName="Work" />
+            <NextLink lName="Work" />
           </button>
           <NextLink
             lName="Source"
