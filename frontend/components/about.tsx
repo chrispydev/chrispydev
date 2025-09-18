@@ -16,7 +16,7 @@ const About: React.FC = () => {
   return (
     <SectionComponent>
       <div className="rounded-xl text-xs md:text-sm bg-plColor backdrop-blur-sm py-2 px-4 m-2">
-        <p>Hello, I am a Full Stack Developer based Ghana</p>
+        <p>Hello, I am a Full Stack Developer based in Ghana</p>
       </div>
       <article className="flex flex-col md:flex-row justify-between items-center mt-4">
         <div className="flex flex-col justify-start items-start mr-10">

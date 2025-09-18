@@ -14,6 +14,7 @@ module.exports = {
       },
       fontFamily: {
         sonoFont: "'Sono', sans-serif'",
+        ubuntuFont: "'Ubuntu', sans-serif'",
       },
     },
   },
