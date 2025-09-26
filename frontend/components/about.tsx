@@ -101,19 +101,6 @@ const About: React.FC = () => {
             lName="@chrispydev"
             icon={<BsInstagram />}
           />
-          <SocialLink
-            link="https://atomgram.com/chrispydev"
-            lName="@chrispydev"
-            icon={
-              <Image
-                src={AtomGram}
-                width={18}
-                height={18}
-                className="rounded-full"
-                alt="atomgram logo"
-              />
-            }
-          />
         </div>
       </article>
     </SectionComponent>

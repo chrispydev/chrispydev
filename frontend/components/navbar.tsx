@@ -26,13 +26,18 @@ const Navbar: React.FC = () => {
           <a className="flex justify-start items-center">
             <FaCross className="text-sColor text-xl" />
             <h3 className="text-xl lg:text-2xl tracking-tighter font-bold text-gray-700">
-              Chrispydev
+              ChrisStar
             </h3>
           </a>
         </Link>
 
         <ul className="md:flex justify-between items-center hidden space-x-6 font-medium text-gray-700">
           <NextLink lName="Work" />
+          <NextLink lName="Service" />
+          <NextLink lName="Portfolio" />
+          <NextLink lName="About" />
+          <NextLink lName="Blog" />
+          <NextLink lName="Contact" />
           <NextLink
             lName="Source"
             icon={<BsGithub className="mr-1" />}
