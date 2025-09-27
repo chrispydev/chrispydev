@@ -5,7 +5,6 @@ import { FaArrowRight, FaCross } from "react-icons/fa";
 import { BsInstagram } from "react-icons/bs";
 
 import AboutImage from "../public/about.jpg";
-import AtomGram from "../public/bio/atomgram.png";
 
 import Heading from "./heading";
 import SocialLink from "./socialLink";

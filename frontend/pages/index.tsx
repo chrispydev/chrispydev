@@ -6,6 +6,7 @@ import FormSection from '../components/formSection';
 import Header from '../components/header';
 import Heading from '../components/heading';
 import SectionComponent from '../components/sectionComponent';
+import Service from '../components/service';
 import Testimonials from '../components/testimonial';
 
 import { testimonials } from '../types/types';
@@ -18,7 +19,8 @@ const Home: NextPage<Props> = ({ testimonials }) => {
 
   return (
     <section className='bg-pColor'>
-      <Header intro='Freelancer' />
+      <Header />
+      <Service />
       <About />
       <SectionComponent>
         <article className='mt-9 text-center'>
