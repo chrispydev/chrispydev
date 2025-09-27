@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <header className="h-[400px] w-full" style={{ backgroundImage: "url('/background.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <div className="p-4 flex flex-col justify-center items-center h-full bg-pColor bg-opacity-60">
+      <div className="p-4 flex flex-col justify-center items-center h-full bg-pColor bg-opacity-50">
         <h1 className="text-3xl font-bold text-black">We Build Scalable & Modern Software Solutions for Your Business</h1>
         <p className="flex justify-center items-center">
           <span ref={el}></span>
