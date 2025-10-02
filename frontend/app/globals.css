@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #e2d5ca;
+  --primary-light: #f5ebe0;
+  --secondary: #e75f51;
+  --success: #158247;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-success: var(--success);
+  --font-sans: var(--font-geist-sans);
+}
+
+
+body {
+  background: var(--primary);
+  color: '#333';
+}

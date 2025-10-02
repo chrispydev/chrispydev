@@ -1,43 +1,33 @@
+'use client'
 import React, { useState } from "react";
-
-import NextLink from "./NextLink";
+import NextLink from "./next-link";
 import { BsGithub } from "react-icons/bs";
-// import { BsFillSunFill, BsGithub, BsMoonFill } from 'react-icons/bs';
 import { motion } from "framer-motion";
-import { GoThreeBars } from "react-icons/go";
 import Link from "next/link";
-import { FaCross } from "react-icons/fa";
+import { FaCross, FaBars } from "react-icons/fa";
 
 const Navbar: React.FC = () => {
-  // const [s, setS] = useState(false);
   const [toggle, setToggle] = useState(false);
 
-  // function dropDown() {
-  //   console.log("Hello World");
-  //   // setTimeout(() => {
-  //   //   setToggle(false);
-  //   // }, 500);
-  // }
 
   return (
-    <div className="sticky top-0 right-0 z-50 w-full bg-plColor/40 backdrop-blur-sm">
+    <div className="sticky top-0 right-0 z-50 w-full bg-primary-light backdrop-blur-sm">
       <nav className="py-2 md:px-7 px-2 flex justify-between md:justify-left lg:justify-center items-center shadow-md md:space-x-24">
-        <Link href="/" legacyBehavior>
-          <a className="flex justify-start items-center">
-            <FaCross className="text-sColor text-xl" />
+        <Link href="/" >
+          <div className="flex justify-start items-center">
+            <FaCross className="text-secondary text-xl" />
             <h3 className="text-xl lg:text-2xl tracking-tighter font-bold text-gray-700">
               ChrisStar
             </h3>
-          </a>
+          </div>
         </Link>
 
         <ul className="md:flex justify-between items-center hidden space-x-6 font-medium text-gray-700">
           <NextLink lName="Work" />
-          <NextLink lName="Service" />
-          <NextLink lName="Portfolio" />
+          <NextLink lName="Services" />
           <NextLink lName="About" />
           <NextLink lName="Blog" />
-          <NextLink lName="Contact" />
+          <NextLink lName="Contact-Us" />
           <NextLink
             lName="Source"
             icon={<BsGithub className="mr-1" />}
@@ -45,34 +35,11 @@ const Navbar: React.FC = () => {
           />
         </ul>
         <div className="flex justify-center items-center space-x-2">
-          {/*
-          {s ? (
-            <motion.button
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.7 }}
-              className='bg-sColor p-2 rounded-md cursor-pointer'
-              onClick={() => setS(!s)}
-            >
-              <BsFillSunFill className='text-white' />
-            </motion.button>
-          ) : (
-            <motion.button
-              initial={{ rotate: 0 }}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 0.7 }}
-              className='bg-dColor p-2 rounded-md cursor-pointer'
-              onClick={() => setS(!s)}
-            >
-              <BsMoonFill className='text-white' />
-            </motion.button>
-          )}
-*/}
           <button
             onClick={() => setToggle(!toggle)}
-            className="bg-sColor p-2 rounded-md cursor-pointer block md:hidden"
+            className="bg-secondary p-2 rounded-md cursor-pointer block md:hidden"
           >
-            <GoThreeBars />
+            <FaBars />
           </button>
         </div>
       </nav>
