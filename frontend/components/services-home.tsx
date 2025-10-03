@@ -6,13 +6,13 @@ import { services } from "@/data/services";
 
 export default function ServicesHome() {
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="pt-2 pb-10 ">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold mb-12"
+          className="text-3xl md:text-4xl font-bold mb-12 underline"
         >
           Our Core Services
         </motion.h2>

@@ -7,7 +7,7 @@ import WorkHome from "@/components/work-home";
 
 export default function Home() {
   return (
-    <main >
+    <main className="bg-primary-light">
       <Header />
       <ServicesHome />
       <WorkHome />

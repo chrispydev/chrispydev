@@ -5,9 +5,15 @@ import { BsGithub } from "react-icons/bs";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaBars, FaStar } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
   const [toggle, setToggle] = useState(false);
+
+  const pathname = usePathname();
+
+  const path = pathname === "/" ? "home" : pathname?.split("/")[1];
+
 
 
   return (
@@ -39,11 +45,11 @@ const Navbar: React.FC = () => {
         </Link>
 
         <ul className="md:flex justify-between items-center hidden space-x-6 font-medium text-gray-700">
-          <NextLink lName="Work" />
-          <NextLink lName="Services" />
-          <NextLink lName="About" />
-          <NextLink lName="Blog" />
-          <NextLink lName="Contact" />
+          <NextLink lName="Work" currentLink={path} />
+          <NextLink lName="Services" currentLink={path} />
+          <NextLink lName="About" currentLink={path} />
+          <NextLink lName="Blog" currentLink={path} />
+          <NextLink lName="Contact" currentLink={path} />
           <NextLink
             lName="Source"
             icon={<BsGithub className="mr-1" />}
@@ -64,16 +70,23 @@ const Navbar: React.FC = () => {
           initial={{ y: -100 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.5 }}
-          className="md:hidden z-30 absolute block right-0 bg-white py-2 px-5 mr-0 shadow-sm space-y-3"
+          className="md:hidden z-30 absolute flex flex-col right-0 bg-white py-2 px-5 mr-0 shadow-sm space-y-3"
         >
-          <NextLink lName="Work" />
-          <NextLink lName="Services" />
-          <NextLink lName="About" />
-          <NextLink lName="Blog" />
-          <NextLink lName="Contact" />
+          <button onClick={() => setToggle(!toggle)} className="mb-4">
+            <NextLink lName="Work" currentLink={path} />
+          </button>
+          <button onClick={() => setToggle(!toggle)} className="mb-4">
+            <NextLink lName="Services" />
+          </button>
 
-          <button onClick={() => setToggle(false)}>
-            <NextLink lName="Work" />
+          <button onClick={() => setToggle(!toggle)} className="mb-4">
+            <NextLink lName="About" />
+          </button>
+          <button onClick={() => setToggle(!toggle)} className="mb-4">
+            <NextLink lName="Blog" />
+          </button>
+          <button onClick={() => setToggle(!toggle)} className="mb-4">
+            <NextLink lName="Contact" />
           </button>
           <NextLink
             lName="Source"
