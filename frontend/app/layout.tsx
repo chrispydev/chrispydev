@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Ubuntu, Ubuntu_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
+import NextTopLoader from "nextjs-toploader";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const ubuntu = Ubuntu({
   subsets: ["latin"],
+  variable: "--font-geist-sans",
+  weight: ["300", "400", "500", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const ubuntuSans = Ubuntu_Sans({
   subsets: ["latin"],
+  variable: "--font-geist-mono",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -23,7 +26,7 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-touch-icon.png",
   },
-  manifest: "icons/site.webmanifest",
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -34,8 +37,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${ubuntu.variable} ${ubuntuSans.variable} antialiased`}
       >
+        <NextTopLoader
+          color="#4f46e5"
+          height={4}
+          showSpinner={false}
+          crawlSpeed={200}
+        />
         <Navbar />
         {children}
       </body>

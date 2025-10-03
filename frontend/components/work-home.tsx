@@ -7,13 +7,13 @@ const caseStudies = [
   {
     title: "E-commerce Platform",
     result: "+200% sales in 6 months",
-    image: "/images/work1.jpg",
+    image: "/background.png",
     slug: "ecommerce-platform",
   },
   {
     title: "Mobile Banking App",
     result: "50k+ downloads, 4.8★ rating",
-    image: "/images/work2.jpg",
+    image: "/background.png",
     slug: "mobile-banking-app",
   },
 ];
