@@ -19,7 +19,7 @@ export default function ServicesHome() {
           <Heading text="Our Services" underline />
         </motion.h2>
 
-        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
           {services.slice(0, 4).map((service, i) => (
             <motion.div
               key={service.id}
