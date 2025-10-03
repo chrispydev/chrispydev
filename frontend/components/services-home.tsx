@@ -3,21 +3,23 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { services } from "@/data/services";
+import Heading from "./heading";
+import Wrapper from "./wrapper";
 
 export default function ServicesHome() {
   return (
-    <section className="pt-2 pb-10 ">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+    <Wrapper>
+      <div className="max-w-7xl mx-auto px-6 text-left">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-bold mb-12 underline"
         >
-          Our Core Services
+          <Heading text="Our Services" underline />
         </motion.h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-2 gap-8">
           {services.slice(0, 4).map((service, i) => (
             <motion.div
               key={service.id}
@@ -47,7 +49,7 @@ export default function ServicesHome() {
           </Link>
         </div>
       </div>
-    </section>
+    </Wrapper>
   );
 }
 
