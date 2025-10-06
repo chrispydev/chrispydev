@@ -1,26 +1,60 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { client } from "@/sanity/client";
+import imageUrlBuilder from "@sanity/image-url";
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Heading from "./heading";
+import Wrapper from "./wrapper";
+import Image from "next/image";
 
-const caseStudies = [
-  {
-    title: "E-commerce Platform",
-    result: "+200% sales in 6 months",
-    image: "/background.png",
-    slug: "ecommerce-platform",
-  },
-  {
-    title: "Mobile Banking App",
-    result: "50k+ downloads, 4.8★ rating",
-    image: "/background.png",
-    slug: "mobile-banking-app",
-  },
-];
+// ✅ Image URL builder
+const { projectId, dataset } = client.config();
+const urlFor = (source: SanityImageSource) =>
+  projectId && dataset
+    ? imageUrlBuilder({ projectId, dataset }).image(source).url()
+    : "/placeholder.png";
+
+// ✅ GROQ query for works
+const WORK_QUERY = `*[_type == "works"] | order(_createdAt desc)[0...4]{
+
+  _id,
+  title,
+  link,
+  description,
+  imgUrl
+} | order(_createdAt desc)`;
 
 export default function WorkHome() {
+  const [works, setWorks] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchWorks() {
+      try {
+        const data = await client.fetch(WORK_QUERY);
+        setWorks(data);
+      } catch (err) {
+        console.error("Failed to fetch works:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchWorks();
+  }, []);
+
+  if (loading) {
+    return (
+      <Wrapper>
+        <div className="text-center py-10 text-gray-500">Loading works...</div>
+      </Wrapper>
+    );
+  }
+
   return (
-    <section className="py-24 bg-white">
+    <Wrapper>
       <div className="max-w-7xl mx-auto px-6 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -28,28 +62,39 @@ export default function WorkHome() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-bold mb-12"
         >
-          Selected Work
+          <Heading text="Work" underline />
         </motion.h2>
 
         <div className="grid sm:grid-cols-2 gap-8">
-          {caseStudies.map((cs, i) => (
+          {works.map((work: any, i: number) => (
             <motion.div
-              key={cs.slug}
+              key={work._id}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.2 }}
-              className="bg-gray-50 rounded-xl overflow-hidden shadow hover:shadow-lg transition"
+              className=" rounded-xl overflow-hidden shadow hover:shadow-lg transition"
             >
-              <img src={cs.image} alt={cs.title} className="w-full h-56 object-cover" />
+              <Image
+                width={300}
+                height={200}
+                src={work.imgUrl ? urlFor(work.imgUrl) : "/placeholder.png"}
+                alt={work.title}
+                className="w-full h-[150px] object-cover"
+              />
               <div className="p-6 text-left">
-                <h3 className="text-xl font-semibold mb-2">{cs.title}</h3>
-                <p className="text-gray-600 mb-4">{cs.result}</p>
-                <Link
-                  href={`/work/${cs.slug}`}
-                  className="text-indigo-600 font-medium hover:underline"
-                >
-                  View Case Study →
-                </Link>
+                <h3 className="text-xl font-semibold mb-2 line-clamp-2">{work.title}</h3>
+                <p className="text-gray-600 mb-4">
+                  {work.description?.slice(0, 78)}...
+                </p>
+                {work.link && (
+                  <Link
+                    href={work.link}
+                    target="_blank"
+                    className="text-indigo-600 font-medium hover:underline"
+                  >
+                    View Project →
+                  </Link>
+                )}
               </div>
             </motion.div>
           ))}
@@ -64,7 +109,7 @@ export default function WorkHome() {
           </Link>
         </div>
       </div>
-    </section>
+    </Wrapper>
   );
 }
 

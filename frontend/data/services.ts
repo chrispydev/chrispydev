@@ -3,6 +3,7 @@ export interface Service {
   id: string;
   title: string;
   description: string;
+  image: string;
   icon: string;
   slug: string;
   details: string;
@@ -17,6 +18,7 @@ export const services: Service[] = [
       "Modern, responsive websites built with Next.js, React, and scalable APIs.",
     icon: "Code",
     slug: "web-development",
+    image: "/services/mobile-app-development.webp",
     details:
       "We specialize in building blazing-fast, SEO-friendly, and scalable websites using the latest web technologies. From landing pages to complex platforms, our web solutions are tailored to business goals.",
     benefits: [
@@ -32,6 +34,7 @@ export const services: Service[] = [
     description:
       "Cross-platform iOS and Android apps with beautiful interfaces.",
     icon: "Smartphone",
+    image: "/services/mobile app development.jpg",
     slug: "mobile-app-development",
     details:
       "We craft mobile apps that deliver seamless experiences across iOS and Android. Our team focuses on performance, usability, and scalability.",
@@ -48,6 +51,7 @@ export const services: Service[] = [
     description:
       "Delightful interfaces and seamless user experiences designed for impact.",
     icon: "Palette",
+    image: "/services/ui-ux-design-1.jpg",
     slug: "ui-ux-design",
     details:
       "Our design team creates visually engaging and intuitive interfaces that connect with your users. We prioritize usability, accessibility, and brand alignment.",
@@ -64,6 +68,7 @@ export const services: Service[] = [
     description:
       "Secure, scalable cloud infrastructure and DevOps automation.",
     icon: "Cloud",
+    image: "/services/cloud-solutions.jpg",
     slug: "cloud-solutions",
     details:
       "We design and manage cloud infrastructure that scales with your business. From CI/CD pipelines to security hardening, we’ve got you covered.",

@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ShieldCheck, Zap, Users } from "lucide-react";
+import Wrapper from "./wrapper";
+import Heading from "./heading";
 
 const values = [
   {
@@ -23,7 +25,7 @@ const values = [
 
 export default function ValueProps() {
   return (
-    <section className="py-24 bg-gray-50">
+    <Wrapper>
       <div className="max-w-7xl mx-auto px-6 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
@@ -31,7 +33,7 @@ export default function ValueProps() {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-bold mb-12"
         >
-          Why Work With Us
+          <Heading text="Why Choose Us" underline />
         </motion.h2>
 
         <div className="grid sm:grid-cols-3 gap-8">
@@ -41,7 +43,7 @@ export default function ValueProps() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.2 }}
-              className="p-6 bg-white rounded-xl shadow hover:shadow-md transition"
+              className="p-6  rounded-xl shadow hover:shadow-md transition"
             >
               <v.icon className="w-10 h-10 text-indigo-600 mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">{v.title}</h3>
@@ -50,7 +52,7 @@ export default function ValueProps() {
           ))}
         </div>
       </div>
-    </section>
+    </Wrapper>
   );
 }
 

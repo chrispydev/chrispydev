@@ -8,9 +8,9 @@ interface Props {
 const Heading: React.FC<Props> = ({ text, underline }) => {
   return (
     <div className="relative w-[contain] underline md:w-max overflow-auto break-all">
-      <h1 className="font-bold text-2xl text-gray-900 break-all">{text}</h1>
+      <h1 className="font-bold text-2xl overflow-hidden text-gray-900 break-all">{text}</h1>
       {underline && (
-        <span className="md:absolute hidden left-0 top-3/4 w-full h-1 bg-gray-900" />
+        <span className="md:absolute hidden left-0 top-10 w-full h-1 bg-gray-900" />
       )}
     </div>
   );

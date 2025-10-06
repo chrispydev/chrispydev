@@ -46,10 +46,8 @@ const Navbar: React.FC = () => {
 
         <ul className="md:flex justify-between items-center hidden space-x-6 font-medium text-gray-700">
           <NextLink lName="Work" currentLink={path} />
-          <NextLink lName="Services" currentLink={path} />
           <NextLink lName="About" currentLink={path} />
-          <NextLink lName="Blog" currentLink={path} />
-          <NextLink lName="Contact" currentLink={path} />
+          <NextLink lName="Contact-Us" currentLink={path} />
           <NextLink
             lName="Source"
             icon={<BsGithub className="mr-1" />}
@@ -76,14 +74,7 @@ const Navbar: React.FC = () => {
             <NextLink lName="Work" currentLink={path} />
           </button>
           <button onClick={() => setToggle(!toggle)} className="mb-4">
-            <NextLink lName="Services" />
-          </button>
-
-          <button onClick={() => setToggle(!toggle)} className="mb-4">
             <NextLink lName="About" />
-          </button>
-          <button onClick={() => setToggle(!toggle)} className="mb-4">
-            <NextLink lName="Blog" />
           </button>
           <button onClick={() => setToggle(!toggle)} className="mb-4">
             <NextLink lName="Contact" />
