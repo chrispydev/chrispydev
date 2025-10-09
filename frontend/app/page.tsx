@@ -40,7 +40,7 @@ export default async function Home() {
         "Custom software engineering.",
         "Product design.",
         "Cloud architecture for startups and enterprises.",
-      ]} />
+      ]} showButton />
       <ServicesHome />
       <WorkHome />
       <ValueProps />

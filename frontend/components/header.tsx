@@ -37,8 +37,8 @@ const Header: React.FC<HeaderProps> = ({ headerText, typewriter, showButton }) =
           </p>
           {showButton &&
             <div className="mt-8 flex gap-4">
-              <Link href="/contact" className="inline-flex items-center rounded-lg bg-secondary md:px-5 md:py-3 px-5 py-3 text-base text-white shadow hover:shadow-lg transition-transform transform hover:-translate-y-0.5">Book a Call</Link>
-              <Link href="/work" className="inline-flex items-center rounded-lg border hover:border-0 hover:text-white text-white hover:bg-secondary transition border-slate-200 md:px-5 md:py-3 px-5 py-3 text-base">See our work</Link>
+              <Link href="/contact-us" className="inline-flex items-center rounded-lg bg-secondary md:px-5 md:py-3 px-5 py-3 text-base text-white shadow hover:shadow-lg transition-transform transform hover:-translate-y-0.5">Book a Call</Link>
+              <Link href="/our-work" className="inline-flex items-center rounded-lg border hover:border-0 hover:text-white text-white hover:bg-secondary transition border-slate-200 md:px-5 md:py-3 px-5 py-3 text-base">See our work</Link>
             </div>
           }
         </motion.div>
