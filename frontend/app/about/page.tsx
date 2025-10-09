@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,15 +10,7 @@ export default function AboutPage() {
   return (
     <main className="bg-white">
       {/* Hero Header */}
-      <section className="relative py-24 bg-gradient-to-r from-indigo-600 to-indigo-800 text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
-          <p className="text-lg md:text-xl opacity-90">
-            Building world-class software solutions that empower businesses to
-            grow and innovate.
-          </p>
-        </div>
-      </section>
+      <Header headerText="Driven by Passion. Built with Purpose." typewriter={['Learn more about the team turning ideas into powerful products.']} />
 
       {/* Mission & Vision */}
       <section className="py-24 max-w-5xl mx-auto px-6">

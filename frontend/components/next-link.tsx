@@ -3,12 +3,13 @@ import React from "react";
 
 interface Props {
   lName: string;
+  path?: string;
   icon?: React.ReactElement;
   lTag?: string;
   currentLink?: string;
 }
 
-const NextLink: React.FC<Props> = ({ lName, icon, lTag, currentLink }) => {
+const NextLink: React.FC<Props> = ({ lName, path, icon, lTag, currentLink }) => {
   return (
     <div className="relative group">
       {lTag ? (
@@ -16,7 +17,7 @@ const NextLink: React.FC<Props> = ({ lName, icon, lTag, currentLink }) => {
           {icon && icon} {lName}
         </a>
       ) : (
-        <Link href={`/${lName.toLowerCase()}`}>
+        <Link href={`/${path.toLowerCase()}`}>
           <div className="flex justify-between items-center">
             {icon && icon} {lName}
           </div>

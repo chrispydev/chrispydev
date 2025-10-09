@@ -1,5 +1,6 @@
 "use client";
 
+import Header from "@/components/header";
 import { useState } from "react";
 
 export default function ContactPage() {
@@ -45,21 +46,7 @@ export default function ContactPage() {
   return (
     <main className="bg-white">
       {/* Hero */}
-      <section className="py-24 bg-gradient-to-r from-indigo-600 to-indigo-800 text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-          <p className="text-lg md:text-xl opacity-90 mb-6">
-            Book a call or send us a message. Let’s build something amazing
-            together.
-          </p>
-          <a
-            href="#calendly"
-            className="inline-block bg-yellow-400 text-black px-6 py-3 rounded-xl font-semibold hover:bg-yellow-500 transition"
-          >
-            Book a Free Call
-          </a>
-        </div>
-      </section>
+      <Header headerText="Let’s Build Something Great Together." typewriter={["Tell us about your project — we’re ready to bring it to life."]} />
 
       {/* Calendly Embed */}
       <section id="calendly" className="py-24 max-w-5xl mx-auto px-6">

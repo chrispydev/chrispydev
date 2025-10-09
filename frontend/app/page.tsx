@@ -36,7 +36,11 @@ export default async function Home() {
 
   return (
     <main className="bg-primary-light">
-      <Header />
+      <Header headerText="We build web & mobile products that scale." typewriter={[
+        "Custom software engineering.",
+        "Product design.",
+        "Cloud architecture for startups and enterprises.",
+      ]} />
       <ServicesHome />
       <WorkHome />
       <ValueProps />
