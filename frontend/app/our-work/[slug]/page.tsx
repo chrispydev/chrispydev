@@ -1,51 +1,68 @@
-import { notFound } from "next/navigation";
-import { caseStudies } from "@/data/case-studies";
-import CaseStudyDetail from "@/components/case-study-detail";
-import type { Metadata } from "next";
+import React from "react";
+import imageUrlBuilder from "@sanity/image-url";
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { PortableText, type SanityDocument } from "next-sanity";
 
-interface Params {
-  slug: string;
-}
+import Heading from "@/components/heading";
+import { client } from "@/sanity/client";
+import Wrapper from "@/components/wrapper";
+import Image from "next/image";
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
-  const study = caseStudies.find((s) => s.slug === params.slug);
+const WORK_QUERY = `*[_type == "works" && slug.current == $slug][0]`;
 
-  if (!study) {
-    return {
-      title: "Case Study Not Found | Your Agency",
-      description: "This case study does not exist.",
-    };
+const { projectId, dataset } = client.config();
+const urlFor = (source: SanityImageSource) =>
+  projectId && dataset
+    ? imageUrlBuilder({ projectId, dataset }).image(source)
+    : null;
+
+const options = { next: { revalidate: 30 } };
+
+export default async function WorkDetail({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  // Fetch work by link (slug)
+  const work = await client.fetch<SanityDocument>(
+    WORK_QUERY,
+    { slug: params.slug },
+    options
+  );
+
+
+  // Handle missing result
+  if (!work) {
+    return (
+      <section className="p-8">
+        <h1 className="text-xl font-bold">Work not found</h1>
+      </section>
+    );
   }
 
-  return {
-    title: `${study.title} | Case Studies | Your Agency`,
-    description: study.description,
-    openGraph: {
-      title: `${study.title} | Your Agency`,
-      description: study.description,
-      url: `https://youragency.com/work/${study.slug}`,
-      siteName: "Your Agency",
-      type: "article",
-      images: [study.image],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${study.title} | Your Agency`,
-      description: study.description,
-      images: [study.image],
-    },
-  };
-}
-
-export default function CaseStudyPage({ params }: { params: Params }) {
-  const study = caseStudies.find((s) => s.slug === params.slug);
-
-  if (!study) return notFound();
+  // Optional image
+  const imageUrl = work.imgUrl ? urlFor(work.imgUrl)?.url() : null;
 
   return (
-    <main className="bg-white">
-      <CaseStudyDetail study={study} />
-    </main>
+    <section>
+      <Wrapper>
+        <Heading text={work.title || "Untitled Work"} underline />
+
+        {imageUrl && (
+          <Image
+            width={800}
+            height={600}
+            src={imageUrl}
+            alt={work.title || "Work image"}
+            className="w-full rounded-lg shadow-md my-6"
+          />
+        )}
+
+        <div className="prose space-y-4 text-sm">
+          {Array.isArray(work.body) && <PortableText value={work.body} />}
+        </div>
+      </Wrapper>
+    </section>
   );
 }
 

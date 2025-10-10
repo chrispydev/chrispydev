@@ -11,32 +11,43 @@ export const workType = defineType({
       type: 'string',
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+    },
+    {
       name: 'link',
-      title: 'Link',
-      type: 'url', // better for links than plain string
+      title: 'Project Link',
+      type: 'url',
     },
     {
       name: 'description',
       title: 'Description',
-      type: 'text', // longer text instead of string
+      type: 'text',
     },
     {
-      name: 'imgUrl',
-      title: 'Image',
-      type: 'image',
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          options: {hotspot: true},
+        },
+      ],
       options: {
-        hotspot: true,
+        layout: 'grid', // optional: makes it easier to view in Studio
       },
     },
     {
       name: 'body',
       title: 'Body',
       type: 'array',
-      of: [
-        {
-          type: 'block', // this gives you rich text editing (bold, italic, lists, etc.)
-        },
-      ],
+      of: [{type: 'block'}],
     },
   ],
 })

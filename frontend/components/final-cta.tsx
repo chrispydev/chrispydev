@@ -23,7 +23,7 @@ export default function FinalCTA() {
         Let’s turn your idea into reality with our expert team.
       </motion.p>
       <Link
-        href="/contact"
+        href="/contact-us"
         className="px-8 py-4 bg-yellow-400 text-indigo-900 font-semibold rounded-xl shadow-lg hover:bg-yellow-300 transition"
       >
         Book a Free Call
