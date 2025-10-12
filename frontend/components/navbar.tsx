@@ -70,14 +70,10 @@ const Navbar: React.FC = () => {
           transition={{ duration: 0.5 }}
           className="md:hidden z-30 absolute flex flex-col right-0 bg-white py-2 px-5 mr-0 shadow-sm space-y-3"
         >
+
           <button onClick={() => setToggle(!toggle)} className="mb-4">
-            <NextLink lName="Work" currentLink={path} />
+            <NextLink path="our-work" lName="Our Work" currentLink={path} />
           </button>
-          {/*
-          <button onClick={() => setToggle(!toggle)} className="mb-4">
-            <NextLink lName="About" />
-          </button>
-                      */}
           <button onClick={() => setToggle(!toggle)} className="mb-4">
             <NextLink path="contact-us" lName="Contact Us" currentLink={path} />
           </button>
