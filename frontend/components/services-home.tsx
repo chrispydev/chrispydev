@@ -6,7 +6,6 @@ import { services } from "@/data/services";
 import Heading from "./heading";
 import Wrapper from "./wrapper";
 import Image from "next/image";
-import { MoveRight } from 'lucide-react'
 
 export default function ServicesHome() {
   return (

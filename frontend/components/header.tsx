@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Typewriter } from "react-simple-typewriter";
-import { header } from "framer-motion/client";
 
 interface HeaderProps {
   headerText: string;

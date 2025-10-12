@@ -1,5 +1,6 @@
 import Header from "@/components/header";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Us | ChrisStar Software Agency",
@@ -43,7 +44,9 @@ export default function AboutPage() {
             Meet Our Founder
           </h2>
           <div className="bg-white p-8 rounded-xl shadow-md">
-            <img
+            <Image
+              width={100}
+              height={100}
               src="/images/founder.jpg"
               alt="Founder - Christian"
               className="w-32 h-32 mx-auto rounded-full object-cover mb-6 shadow-lg"

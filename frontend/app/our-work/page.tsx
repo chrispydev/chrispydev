@@ -27,8 +27,17 @@ const WORK_QUERY = `*[_type == "works"] | order(_createdAt desc)[0...4]{
   imgUrl
 } | order(_createdAt desc)`;
 
+interface Work {
+  _id: string;
+  title: string;
+  link?: string;
+  description?: string;
+  imgUrl?: string;
+  slug: { current: string }
+}
+
 export default function WorkHome() {
-  const [works, setWorks] = useState<any[]>([]);
+  const [works, setWorks] = useState<Work[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -73,7 +82,7 @@ export default function WorkHome() {
 
 
           <div className="grid sm:grid-cols-2 gap-8">
-            {works.map((work: any, i: number) => (
+            {works.map((work: Work, i: number) => (
               <motion.div
                 key={work._id}
                 initial={{ opacity: 0, y: 40 }}

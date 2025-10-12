@@ -17,7 +17,7 @@ const NextLink: React.FC<Props> = ({ lName, path, icon, lTag, currentLink }) => 
           {icon && icon} {lName}
         </a>
       ) : (
-        <Link href={`/${path.toLowerCase()}`}>
+        <Link href={`/${path?.toLowerCase()}`}>
           <div className="flex justify-between items-center">
             {icon && icon} {lName}
           </div>

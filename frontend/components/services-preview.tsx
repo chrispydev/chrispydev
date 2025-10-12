@@ -1,3 +1,4 @@
+import Link from "next/link";
 import AnimatedSection from "./animated-section";
 import ServiceCard from "./service-card";
 import { services } from "@/data/services";
@@ -25,12 +26,12 @@ export default function ServicesPreview() {
         </div>
 
         <div className="text-center mt-12">
-          <a
+          <Link
             href="/services"
             className="px-6 py-3 bg-indigo-600 text-white rounded-xl shadow-md hover:bg-indigo-700 transition"
           >
             View All Services
-          </a>
+          </Link>
         </div>
       </div>
     </section>

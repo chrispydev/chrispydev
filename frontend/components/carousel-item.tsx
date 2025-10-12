@@ -5,7 +5,7 @@ import styles from '../styles/carousel.module.css';
 
 interface Props {
   index: number;
-  children: JSX.Element;
+  children: React.JSX.Element;
 }
 
 const CarouselItem: React.FC<Props> = ({ children, index }) => {

@@ -1,11 +1,9 @@
 import FinalCTA from "@/components/final-cta";
 import Header from "@/components/header";
-import Heading from "@/components/heading";
 import ServicesHome from "@/components/services-home";
 import Testimonials from "@/components/testimonials";
 import ValueProps from "@/components/value-props";
 import WorkHome from "@/components/work-home";
-import Wrapper from "@/components/wrapper";
 import { client } from "@/sanity/client";
 import { type SanityDocument } from "next-sanity";
 

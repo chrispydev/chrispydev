@@ -1,7 +1,7 @@
 import React from "react";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import { PortableText, type SanityDocument } from "next-sanity";
+import { PortableText } from "next-sanity";
 
 import Heading from "@/components/heading";
 import { client } from "@/sanity/client";
