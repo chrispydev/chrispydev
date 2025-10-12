@@ -2,6 +2,7 @@
 
 import Header from "@/components/header";
 import { useState } from "react";
+import axios from "axios";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -13,7 +14,7 @@ export default function ContactPage() {
     website: "", // honeypot field
   });
 
-  const [status, setStatus] = useState<null | "success" | "error">(null);
+  const [status, setStatus] = useState<null | "success" | "error" | "submitting">(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -21,7 +22,7 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // honeypot check
@@ -30,42 +31,48 @@ export default function ContactPage() {
       return;
     }
 
-    // 👉 replace with API endpoint (e.g., /api/contact) or 3rd party service
-    console.log("Form submitted:", formData);
-    setStatus("success");
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      budget: "",
-      message: "",
-      website: "",
-    });
+    setStatus("submitting");
+
+    try {
+      // ✅ Replace with your Formspree endpoint (from your old form)
+      const response = await axios.post(process.env.NEXT_PUBLIC_FORMSPREE_URL!, {
+        data: {
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          budget: formData.budget,
+          message: formData.message,
+        },
+      });
+
+      if (response.status === 200) {
+        setStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          budget: "",
+          message: "",
+          website: "",
+        });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus("error");
+    }
   };
 
   return (
-    <main className="bg-white">
-      {/* Hero */}
-      <Header headerText="Let’s Build Something Great Together." typewriter={["Tell us about your project — we’re ready to bring it to life."]} />
+    <main>
+      <Header
+        headerText="Let’s Build Something Great Together."
+        typewriter={[
+          "Tell us about your project — we’re ready to bring it to life.",
+        ]}
+      />
 
-      {/* Calendly Embed */}
-      {/*
-      <section id="calendly" className="py-24 max-w-5xl mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          Schedule a Call
-        </h2>
-        <div className="w-full h-[650px]">
-          <iframe
-            src="https://calendly.com/YOUR-CALENDLY-USERNAME"
-            width="100%"
-            height="100%"
-            className="rounded-xl shadow-lg border"
-          ></iframe>
-        </div>
-      </section>
-       */}
-
-      {/* Contact Form */}
       <section className="py-24 ">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -73,7 +80,7 @@ export default function ContactPage() {
           </h2>
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-8 rounded-xl  space-y-6"
+            className="bg-white p-8 rounded-xl space-y-6"
           >
             {/* Honeypot field (hidden from humans) */}
             <input
@@ -158,9 +165,14 @@ export default function ContactPage() {
 
             <button
               type="submit"
+              disabled={status === "submitting"}
               className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition"
             >
-              Send Message
+              {status === "submitting"
+                ? "Submitting..."
+                : status === "success"
+                  ? "Submitted ✅"
+                  : "Send Message"}
             </button>
 
             {status === "success" && (
