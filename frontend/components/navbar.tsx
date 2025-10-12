@@ -79,7 +79,7 @@ const Navbar: React.FC = () => {
           </button>
                       */}
           <button onClick={() => setToggle(!toggle)} className="mb-4">
-            <NextLink lName="Contact" />
+            <NextLink path="contact-us" lName="Contact Us" currentLink={path} />
           </button>
           <NextLink
             lName="Source"
