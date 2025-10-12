@@ -30,7 +30,13 @@ export default function ServicesHome() {
               transition={{ duration: 0.5, delay: i * 0.15 }}
               className="pb-6  shadow rounded-2xl hover:shadow-lg transition"
             >
-              <Image src={service.image} width={400} height={400} alt='service' className="h-[150px] rounded-t-2xl object-fit" />
+              <Image
+                src={service.image}
+                alt="service"
+                width={400}
+                height={400}
+                className="h-[150px] w-auto rounded-t-2xl object-cover"
+              />
               <div className="p-4">
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>

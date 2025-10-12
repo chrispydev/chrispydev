@@ -22,6 +22,7 @@ const WORK_QUERY = `*[_type == "works"] | order(_createdAt desc)[0...4]{
 
   _id,
   title,
+  slug,
   link,
   description,
   imgUrl
@@ -88,7 +89,7 @@ export default function WorkHome() {
                 </p>
                 {work.link && (
                   <Link
-                    href={work.link}
+                    href={`/our-work/${work.slug.current}`}
                     target="_blank"
                     className="text-indigo-600 font-medium hover:underline"
                   >

@@ -24,12 +24,9 @@ export default async function WorkDetail({
   params: { slug: string };
 }) {
   // Fetch work by link (slug)
-  const work = await client.fetch<SanityDocument>(
-    WORK_QUERY,
-    { slug: params.slug },
-    options
-  );
+  const { slug } = await params; // ✅ Await params first
 
+  const work = await client.fetch(WORK_QUERY, { slug });
 
   // Handle missing result
   if (!work) {
