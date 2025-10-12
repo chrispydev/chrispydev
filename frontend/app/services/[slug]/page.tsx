@@ -2,7 +2,9 @@ import { notFound } from "next/navigation";
 import { services } from "@/data/services";
 import ServiceDetail from "@/components/service-detail";
 import type { Metadata } from "next";
+import Wrapper from "@/components/wrapper";
 
+// ✅ Define Params correctly for async usage
 interface Params {
   slug: string;
 }
@@ -11,10 +13,11 @@ interface Params {
 export async function generateMetadata({
   params,
 }: {
-  params: Params;
+  params: Promise<Params>; // <-- must be Promise<Params>
 }): Promise<Metadata> {
-  const service = services.find((s) => s.slug === params.slug);
+  const { slug } = await params; // ✅ Await params here
 
+  const service = services.find((s) => s.slug === slug);
   if (!service) {
     return {
       title: "Service Not Found | Your Agency",
@@ -40,15 +43,21 @@ export async function generateMetadata({
   };
 }
 
-export default function ServicePage({ params }: { params: Params }) {
-  const service = services.find((s) => s.slug === params.slug);
+// ✅ Page Component (also async for params)
+export default async function ServicePage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { slug } = await params; // ✅ Await params here too
+  const service = services.find((s) => s.slug === slug);
 
   if (!service) return notFound();
 
   return (
-    <main className="bg-white">
+    <Wrapper>
       <ServiceDetail service={service} />
-    </main>
+    </Wrapper>
   );
 }
 

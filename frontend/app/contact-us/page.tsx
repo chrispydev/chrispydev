@@ -49,6 +49,7 @@ export default function ContactPage() {
       <Header headerText="Let’s Build Something Great Together." typewriter={["Tell us about your project — we’re ready to bring it to life."]} />
 
       {/* Calendly Embed */}
+      {/*
       <section id="calendly" className="py-24 max-w-5xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           Schedule a Call
@@ -62,16 +63,17 @@ export default function ContactPage() {
           ></iframe>
         </div>
       </section>
+       */}
 
       {/* Contact Form */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 ">
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Or Send Us a Message
+            Send Us a Message
           </h2>
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-8 rounded-xl shadow-lg space-y-6"
+            className="bg-white p-8 rounded-xl  space-y-6"
           >
             {/* Honeypot field (hidden from humans) */}
             <input

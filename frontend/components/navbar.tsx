@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
 
         <ul className="md:flex justify-between items-center hidden space-x-6 font-medium text-gray-700">
           <NextLink path="our-work" lName="Our Work" currentLink={path} />
-          <NextLink path="about" lName="About Us" currentLink={path} />
+          {/* <NextLink path="about" lName="About Us" currentLink={path} /> */}
           <NextLink path="contact-us" lName="Contact Us" currentLink={path} />
           <NextLink
             lName="Source"

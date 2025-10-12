@@ -28,14 +28,14 @@ export default function ServicesHome() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="pb-6  shadow rounded-2xl hover:shadow-lg transition"
+              className="pb-6 shadow rounded-2xl hover:shadow-lg transition"
             >
               <Image
                 src={service.image}
                 alt="service"
                 width={400}
                 height={400}
-                className="h-[150px] w-auto rounded-t-2xl object-cover"
+                className="h-[150px] w-full rounded-t-2xl object-cover"
               />
               <div className="p-4">
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>

@@ -45,7 +45,6 @@ export default function WorkHome() {
     fetchWorks();
   }, []);
 
-  console.log("Fetched works:", works);
 
   if (loading) {
     return (

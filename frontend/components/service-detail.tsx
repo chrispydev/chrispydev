@@ -30,7 +30,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
       </AnimatedSection>
 
       <AnimatedSection>
-        <div className="bg-indigo-50 p-6 rounded-xl text-center shadow-md">
+        <div className=" p-6 rounded-xl text-center shadow-md">
           <h3 className="text-xl font-semibold mb-2">
             Ready to start your {service.title} project?
           </h3>
@@ -38,7 +38,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
             Let’s discuss your ideas and bring them to life.
           </p>
           <Link
-            href="/contact"
+            href="/contact-us"
             className="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition"
           >
             Book a Free Call
