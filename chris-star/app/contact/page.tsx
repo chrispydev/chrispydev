@@ -67,21 +67,21 @@ export default function ContactPage() {
   return (
     <main>
       <Header
-        headerText="Let’s Build Something Great Together."
+        headerText="Let’s Create Something Amazing"
         typewriter={[
-          "Tell us about your project — we’re ready to bring it to life.",
+          "Tell me about your project — I’m ready to help bring your ideas to life.",
         ]}
       />
 
-      <section className="py-2">
+      <section className="py-8">
         {/* <section className="py-24 "> */}
         <div className="max-w-4xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Send Us a Message
+            Get in Touch
           </h2>
           <form
             onSubmit={handleSubmit}
-            className="bg-white p-8 rounded-xl space-y-6"
+            className="border border-secondary p-8 rounded-xl space-y-6"
           >
             {/* Honeypot field (hidden from humans) */}
             <input
@@ -105,7 +105,7 @@ export default function ContactPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500"
+                  className="w-full border border-secondary rounded-lg p-4 focus:border-success"
                 />
               </div>
               <div>
@@ -118,37 +118,11 @@ export default function ContactPage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500"
+                  className="w-full border border-secondary rounded-lg p-4 focus:border-success"
                 />
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Company
-                </label>
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Budget Range
-                </label>
-                <input
-                  type="text"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500"
-                />
-              </div>
-            </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -160,14 +134,14 @@ export default function ContactPage() {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-500"
+                className="w-full border border-secondary rounded-lg p-4 focus:border-success"
               />
             </div>
 
             <button
               type="submit"
               disabled={status === "submitting"}
-              className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition"
+              className="bg-secondary text-white px-6 py-3 rounded-xl font-semibold hover:bg-secondary transition"
             >
               {status === "submitting"
                 ? "Submitting..."
@@ -177,7 +151,7 @@ export default function ContactPage() {
             </button>
 
             {status === "success" && (
-              <p className="text-green-600 mt-4">
+              <p className="text-success mt-4">
                 ✅ Thank you! We’ll be in touch soon.
               </p>
             )}

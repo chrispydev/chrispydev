@@ -7,6 +7,7 @@ import Heading from "@/components/heading";
 import { client } from "@/sanity/client";
 import Wrapper from "@/components/wrapper";
 import Image from "next/image";
+import FinalCTA from "@/components/final-cta";
 
 const WORK_QUERY = `*[_type == "works" && slug.current == $slug][0]`;
 
@@ -77,6 +78,8 @@ export default async function WorkDetail({
           </div>
         )}
       </Wrapper>
+
+      <FinalCTA />
     </section>
   );
 }

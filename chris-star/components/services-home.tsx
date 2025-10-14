@@ -15,9 +15,9 @@ export default function ServicesHome() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold mb-12 underline"
+          className="text-3xl md:text-4xl font-bold mb-12"
         >
-          <Heading text="Services" underline />
+          <Heading text="What I Do" underline />
         </motion.h2>
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
@@ -27,24 +27,24 @@ export default function ServicesHome() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="pb-6 shadow rounded-2xl hover:shadow-lg transition"
+              className="pb-6  rounded-xl hover:shadow transition"
             >
               <Image
                 src={service.image}
                 alt="service"
                 width={400}
                 height={400}
-                className="h-[150px] w-full rounded-t-2xl object-cover"
+                className="h-[140px] w-full rounded-t-2xl object-cover"
               />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="text-indigo-600 font-medium hover:underline"
-                >
-                  Learn More →
-                </Link>
+              <div className="py-4 pr-4 h-min">
+                <h3 className="text-md font-semibold">{service.title}</h3>
+                <p className="text-gray-600 text-sm">{service.description}</p>
+                {/* <Link */}
+                {/*   href={`/services/${service.slug}`} */}
+                {/*   className="text-indigo-600 text-sm font-medium hover:underline" */}
+                {/* > */}
+                {/*   Learn More → */}
+                {/* </Link> */}
               </div>
             </motion.div>
           ))}

@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import Wrapper from "@/components/wrapper";
 import Image from "next/image";
 import Header from "@/components/header";
+import FinalCTA from "@/components/final-cta";
 
 // ✅ Image URL builder
 const { projectId, dataset } = client.config();
@@ -65,7 +66,7 @@ export default function WorkHome() {
 
   return (
     <main>
-      <Header headerText="Transforming Ideas into Impact." typewriter={['A showcase of the digital products we’ve built for clients worldwide.']} />
+      <Header headerText="Transforming Ideas into Impactful Solutions" typewriter={['A collection of projects that highlight my work in web and mobile development']} />
       <Wrapper>
         <div className="max-w-7xl mx-auto px-6 text-center">
           <motion.h2
@@ -74,10 +75,10 @@ export default function WorkHome() {
             transition={{ duration: 0.6 }}
             className=" text-4xl font-bold text-center mb-6 md:text-4xl "
           >
-            Case Studies
+        Projects & Case Studies
           </motion.h2>
           <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-            Each project showcases our expertise and the measurable outcomes we’ve delivered.
+            Each project reflects my approach to solving real-world problems through design, innovation, and clean code
           </p>
 
 
@@ -88,23 +89,23 @@ export default function WorkHome() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.2 }}
-                className=" rounded-xl overflow-hidden shadow hover:shadow-lg transition"
+                className="pb-6  rounded-xl hover:shadow transition"
               >
                 <Image
                   width={300}
                   height={200}
                   src={work.imgUrl ? urlFor(work.imgUrl[2]) : "/placeholder.png"}
                   alt={work.title}
-                  className="w-full h-[150px] object-cover"
+                  className="h-[140px] w-full rounded-t-2xl object-cover"
                 />
-                <div className="p-6 text-left">
-                  <h3 className="text-lg font-semibold mb-2 line-clamp-2">{work.title}</h3>
+                <div className="py-4 pr-4 h-min text-left">
+                  <h3 className="text-md font-semibold">{work.title}</h3>
                   <p className="text-gray-600 mb-4 text-sm">
                     {work.description?.slice(0, 68)}...
                   </p>
                   {work.slug?.current && (
                     <Link
-                      href={`/our-work/${work.slug.current}`}
+                      href={`/works/${work.slug.current}`}
                       className="text-indigo-600 font-medium hover:underline"
                     >
                       View Project →
@@ -118,6 +119,7 @@ export default function WorkHome() {
         </div>
       </Wrapper>
 
+      <FinalCTA />
     </main>
   );
 }

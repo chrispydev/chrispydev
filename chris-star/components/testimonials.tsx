@@ -18,19 +18,21 @@ interface TestimonialsProps {
 const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
   return (
     <Wrapper>
-      <Heading text="What Clients Say" underline={true} />
-      <div className="my-8">
-        <Carousel className="bg-pColor text-dColor py-4">
-          {testimonials.map((testimonial, index) => (
-            <CarouselItem index={index} key={index}>
-              <Review by={`${testimonial.name}(${testimonial.company})`}>
-                {testimonial.feedback}
-              </Review>
-            </CarouselItem>
-          ))}
-        </Carousel>
-      </div>
+      <article className="px-6">
+        <Heading text="What Clients Say" underline={true} />
+        <div className="my-8">
+          <Carousel className="bg-pColor text-dColor py-4">
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem index={index} key={index}>
+                <Review by={`${testimonial.name}(${testimonial.company})`}>
+                  {testimonial.feedback}
+                </Review>
+              </CarouselItem>
+            ))}
+          </Carousel>
+        </div>
 
+      </article>
     </Wrapper>
   );
 };

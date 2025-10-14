@@ -1,3 +1,4 @@
+import About from "@/components/about";
 import FinalCTA from "@/components/final-cta";
 import Header from "@/components/header";
 import ServicesHome from "@/components/services-home";
@@ -34,14 +35,14 @@ export default async function Home() {
 
   return (
     <main className="bg-primary-light">
-      <Header headerText="We build web & mobile products that scale." typewriter={[
+      <Header headerText="I build fast, scalable web and mobile applications." typewriter={[
         "Custom software engineering.",
         "Product design.",
         "Cloud architecture for startups and enterprises.",
       ]} showButton />
+      <About />
       <ServicesHome />
       <WorkHome />
-      <ValueProps />
       <Testimonials testimonials={formattedTestimonials} />
       <FinalCTA />
     </main>

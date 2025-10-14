@@ -12,7 +12,7 @@ export default function FinalCTA() {
         transition={{ duration: 0.7 }}
         className="text-3xl md:text-4xl font-bold mb-6"
       >
-        Ready to Build Your Next Project?
+        Transforming Ideas into Digital Reality
       </motion.h2>
       <motion.p
         initial={{ opacity: 0 }}
@@ -20,7 +20,7 @@ export default function FinalCTA() {
         transition={{ delay: 0.3 }}
         className="text-lg mb-8 text-gray-100"
       >
-        Let’s turn your idea into reality with our expert team.
+        Whether it’s a website or a mobile app, I’m ready to build your next big project.
       </motion.p>
       <Link
         href="/contact-us"

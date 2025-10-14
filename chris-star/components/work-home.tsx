@@ -19,7 +19,6 @@ const urlFor = (source: SanityImageSource) =>
 
 // ✅ GROQ query for works
 const WORK_QUERY = `*[_type == "works"] | order(_createdAt desc)[0...2]{
-
   _id,
   title,
   slug,
@@ -66,14 +65,14 @@ export default function WorkHome() {
 
   return (
     <Wrapper>
-      <div className="max-w-7xl mx-auto px-6 text-center">
+      <div className="max-w-7xl mx-auto px-6 text-left">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-bold mb-12"
         >
-          <Heading text="Work" underline />
+          <Heading text="Works" underline />
         </motion.h2>
 
         <div className="grid sm:grid-cols-2 gap-8">
@@ -83,25 +82,24 @@ export default function WorkHome() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.2 }}
-              className=" rounded-xl overflow-hidden shadow hover:shadow-lg transition"
+              className="pb-6 rounded-xl hover:shadow transition"
             >
               <Image
                 width={300}
                 height={200}
                 src={work.imgUrl ? urlFor(work.imgUrl[2]) : "/placeholder.png"}
                 alt={work.title}
-                className="w-full h-[150px] object-cover"
+                className="w-full h-[140px] object-cover"
               />
-              <div className="p-6 text-left">
-                <h3 className="text-xl font-semibold mb-2 line-clamp-2">{work.title}</h3>
-                <p className="text-gray-600 mb-4">
+              <div className="py-4 text-left">
+                <h3 className="text-md font-semibold line-clamp-2">{work.title}</h3>
+                <p className="text-gray-600 text-sm mb-4">
                   {work.description?.slice(0, 78)}...
                 </p>
                 {work.link && (
                   <Link
-                    href={`/our-work/${work.slug.current}`}
-                    target="_blank"
-                    className="text-indigo-600 font-medium hover:underline"
+                    href={`/works/${work.slug.current}`}
+                    className="text-indigo-600 text-sm font-medium hover:underline"
                   >
                     View Project →
                   </Link>
@@ -116,7 +114,8 @@ export default function WorkHome() {
             href="/our-work"
             className="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition"
           >
-            View All Work
+            View All Work →
+
           </Link>
         </div>
       </div>
