@@ -18,14 +18,14 @@ const urlFor = (source: SanityImageSource) =>
     : "/placeholder.png";
 
 // ✅ GROQ query for works
-const WORK_QUERY = `*[_type == "works"] | order(_createdAt desc)[0...4]{
+const WORK_QUERY = `*[_type == "works"] | order(_createdAt desc)[0...2]{
 
   _id,
   title,
   slug,
   link,
   description,
-  imgUrl
+  "imgUrl": images[].asset->url 
 } | order(_createdAt desc)`;
 
 interface Work {
@@ -33,7 +33,7 @@ interface Work {
   title: string;
   link?: string;
   description?: string;
-  imgUrl?: string;
+  imgUrl?: string[];
   slug: { current: string }
 }
 
@@ -88,7 +88,7 @@ export default function WorkHome() {
               <Image
                 width={300}
                 height={200}
-                src={work.imgUrl ? urlFor(work.imgUrl) : "/placeholder.png"}
+                src={work.imgUrl ? urlFor(work.imgUrl[2]) : "/placeholder.png"}
                 alt={work.title}
                 className="w-full h-[150px] object-cover"
               />
