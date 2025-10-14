@@ -19,7 +19,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
   return (
     <Wrapper>
       <article className="px-6">
-        <Heading text="What Clients Say" underline={true} />
+        <Heading text="Voices of Our Clients" underline={true} />
         <div className="my-8">
           <Carousel className="bg-pColor text-dColor py-4">
             {testimonials.map((testimonial, index) => (
