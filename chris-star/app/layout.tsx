@@ -17,7 +17,7 @@ const ubuntuSans = Ubuntu_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Chris Star",
+  title: "ChrisStar",
   description: "Chris Star Portfolio",
   icons: {
     icon: [
