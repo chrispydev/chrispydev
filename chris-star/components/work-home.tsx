@@ -111,7 +111,7 @@ export default function WorkHome() {
 
         <div className="mt-10">
           <Link
-            href="/our-work"
+            href="/works"
             className="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition"
           >
             View All Work →
