@@ -23,12 +23,10 @@ export default async function WorkDetail({
 }: {
   params: { slug: string };
 }) {
-  // Fetch work by link (slug)
-  const { slug } = await params; // ✅ Await params first
+  const { slug } = await params;
 
   const work = await client.fetch(WORK_QUERY, { slug });
 
-  // Handle missing result
   if (!work) {
     return (
       <section className="p-8">
@@ -37,27 +35,47 @@ export default async function WorkDetail({
     );
   }
 
-  // Optional image
-  const imageUrl = work.imgUrl ? urlFor(work.imgUrl)?.url() : null;
+  // ✅ Handle multiple images
+  const images = work.images || [];
+  const firstImage = images.length > 0 ? images[0] : null;
+  const restImages = images.slice(1);
 
   return (
     <section>
       <Wrapper>
         <Heading text={work.title || "Untitled Work"} underline />
 
-        {imageUrl && (
+        {/* ✅ Top main image */}
+        {firstImage && (
           <Image
-            width={800}
-            height={600}
-            src={imageUrl}
+            width={1200}
+            height={800}
+            src={urlFor(firstImage)?.url() || ""}
             alt={work.title || "Work image"}
-            className="w-full rounded-lg shadow-md my-6"
+            className="w-full rounded-lg shadow-md my-6 object-cover"
           />
         )}
 
-        <div className="prose space-y-4 text-sm">
+        {/* ✅ Work description */}
+        <div className="prose space-y-4 text-sm link--color">
           {Array.isArray(work.body) && <PortableText value={work.body} />}
         </div>
+
+        {/* ✅ Bottom image gallery */}
+        {restImages.length > 0 && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+            {restImages.map((img: SanityImageSource, index: number) => (
+              <Image
+                key={index}
+                width={600}
+                height={400}
+                src={urlFor(img)?.url() || ""}
+                alt={`${work.title} image ${index + 2}`}
+                className="rounded-lg shadow-sm object-cover"
+              />
+            ))}
+          </div>
+        )}
       </Wrapper>
     </section>
   );
