@@ -18,7 +18,7 @@ const urlFor = (source: SanityImageSource) =>
     : "/placeholder.png";
 
 // ✅ GROQ query for works
-const WORK_QUERY = `*[_type == "works"] | order(_createdAt desc)[0...4]{
+const WORK_QUERY = `*[_type == "works"] | order(_createdAt desc){
   _id,
   title,
   slug,
@@ -98,9 +98,9 @@ export default function WorkHome() {
                   className="w-full h-[150px] object-cover"
                 />
                 <div className="p-6 text-left">
-                  <h3 className="text-xl font-semibold mb-2 line-clamp-2">{work.title}</h3>
-                  <p className="text-gray-600 mb-4">
-                    {work.description?.slice(0, 78)}...
+                  <h3 className="text-lg font-semibold mb-2 line-clamp-2">{work.title}</h3>
+                  <p className="text-gray-600 mb-4 text-sm">
+                    {work.description?.slice(0, 68)}...
                   </p>
                   {work.slug?.current && (
                     <Link
