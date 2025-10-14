@@ -23,7 +23,7 @@ export default function FinalCTA() {
         Whether it’s a website or a mobile app, I’m ready to build your next big project.
       </motion.p>
       <Link
-        href="/contact-us"
+        href="/contact"
         className="px-8 py-4 bg-yellow-400 text-indigo-900 font-semibold rounded-xl shadow-lg hover:bg-yellow-300 transition"
       >
         Book a Free Call
